@@ -9,8 +9,10 @@
 					{
 						"type": "heading1",
 						"content": {
-							"text": "Method"
-						}
+							"text": "Rooted Psychotherapy & Counseling",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -34,16 +36,16 @@
 								"button_style",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "ghost",
-									"type": "Select"
+									"type": "Select",
+									"value": "outline"
 								}
 							],
 							[
 								"button_label",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "invented",
-									"type": "Text"
+									"type": "Text",
+									"value": "Button 1"
 								}
 							]
 						]
@@ -56,8 +58,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Aliqua pariatur aliquip ea consectetur cillum do eu quis. Laborum commodo do fugiat irure dolor nulla est aute deserunt anim aliquip irure. Proident fugiat nisi ex amet nostrud."
-						}
+							"text": "Quality Care You Can Count On",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}

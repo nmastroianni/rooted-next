@@ -49,7 +49,13 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
             field={slice.primary.heading}
             components={{
               heading1: ({ children }) => (
-                <Heading as="h1" size="6xl" className="">
+                <Heading
+                  as="h1"
+                  size="6xl"
+                  className={cn('text-primary', {
+                    'text-primary-foreground': slice.variation === 'default',
+                  })}
+                >
                   {children}
                 </Heading>
               ),
@@ -61,7 +67,9 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
             field={slice.primary.sub_heading}
             components={{
               paragraph: ({ children }) => (
-                <p className="text-muted-foreground">{children}</p>
+                <p className="text-muted-foreground text-2xl lg:text-3xl">
+                  {children}
+                </p>
               ),
             }}
           />
