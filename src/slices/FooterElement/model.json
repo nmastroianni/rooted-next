@@ -1,0 +1,29 @@
+{
+  "id": "footer_element",
+  "type": "SharedSlice",
+  "name": "FooterElement",
+  "description": "FooterElement",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "layout": {
+          "type": "Link",
+          "config": {
+            "label": "Layout",
+            "select": "document",
+            "customtypes": [
+              "footer"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

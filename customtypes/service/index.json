@@ -1,20 +1,23 @@
 {
   "format": "page",
-  "id": "homepage",
-  "label": "Homepage",
-  "repeatable": false,
+  "id": "service",
+  "label": "Service",
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
             "rich_text": {
-              "type": "SharedSlice"
-            },
-            "hero": {
               "type": "SharedSlice"
             }
           }
