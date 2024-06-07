@@ -1511,9 +1511,57 @@ export type SubMenuItemSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *SubMenuItem → Box → Primary*
+ */
+export interface SubMenuItemSliceBoxPrimary {
+  /**
+   * Label field in *SubMenuItem → Box → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_menu_item.box.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *SubMenuItem → Box → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_menu_item.box.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Description field in *SubMenuItem → Box → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_menu_item.box.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Box variation for SubMenuItem Slice
+ *
+ * - **API ID**: `box`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SubMenuItemSliceBox = prismic.SharedSliceVariation<
+  "box",
+  Simplify<SubMenuItemSliceBoxPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *SubMenuItem*
  */
-type SubMenuItemSliceVariation = SubMenuItemSliceDefault;
+type SubMenuItemSliceVariation = SubMenuItemSliceDefault | SubMenuItemSliceBox;
 
 /**
  * SubMenuItem Shared Slice
@@ -1613,8 +1661,10 @@ declare module "@prismicio/client" {
       SubMenuHeadingSliceDefault,
       SubMenuItemSlice,
       SubMenuItemSliceDefaultPrimary,
+      SubMenuItemSliceBoxPrimary,
       SubMenuItemSliceVariation,
       SubMenuItemSliceDefault,
+      SubMenuItemSliceBox,
     };
   }
 }

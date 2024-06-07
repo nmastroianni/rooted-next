@@ -22,7 +22,7 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className={cn('text-primary-foreground relative', {
         'bg-primary': slice.variation === 'default',
-        'lg:h-[calc(100vh-64px)] lg:min-h-[750px]':
+        'lg:h-[calc(100vh-108px)] lg:min-h-[750px]':
           slice.variation !== 'contentHeight',
       })}
     >
@@ -50,7 +50,7 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
             components={{
               heading1: ({ children }) => (
                 <Heading
-                  as="h1"
+                  as={index === 0 ? 'h1' : 'h2'}
                   size="6xl"
                   className={cn('text-primary', {
                     'text-primary-foreground': slice.variation === 'default',
