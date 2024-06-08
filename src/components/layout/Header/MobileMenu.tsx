@@ -23,6 +23,7 @@ import {
   SubMenuDocument,
 } from '../../../../prismicio-types'
 import { PrismicNextLink } from '@prismicio/next'
+import Link from 'next/link'
 
 type MobileMenuProps = {
   className?: string
@@ -63,10 +64,15 @@ const MobileMenu = ({
               </p>
             )}
           </SheetHeader>
+          <SheetClose asChild className="my-2">
+            <Button asChild variant={'default'} className="flex">
+              <Link href="/contact">Get In Touch</Link>
+            </Button>
+          </SheetClose>
 
-          <ul className="mt-8 grid gap-y-4">
-            {slices.length > 0 &&
-              slices.map((slice) => {
+          {slices.length > 0 && (
+            <Accordion type="single" collapsible className="my-5">
+              {slices.map((slice) => {
                 if (slice.variation === 'withSubMenu') {
                   const slicePrimary =
                     slice.primary as MenuItemSliceWithSubMenuPrimary
@@ -78,60 +84,56 @@ const MobileMenu = ({
                     ...(sub_menu.data?.slices2 ? sub_menu.data.slices2 : []),
                   ]
                   return (
-                    <li key={slice.id}>
-                      <Accordion type="single" collapsible>
-                        <AccordionItem
-                          value={`${slice.primary.label}`}
-                          className="border-none"
-                        >
-                          <AccordionTrigger
-                            className={cn(
-                              'flex justify-center rounded-lg border text-primary [&[data-state=open]]:mb-4',
-                              buttonVariants({ variant: 'link' })
-                            )}
-                          >
-                            {slice.primary.label}
-                          </AccordionTrigger>
-                          {allSlices.length > 0 &&
-                            allSlices.map((subSlice, index) => {
-                              if (subSlice.slice_type === 'sub_menu_item') {
-                                return (
-                                  <AccordionContent key={subSlice.id}>
-                                    <SheetClose asChild>
-                                      <PrismicNextLink
-                                        field={subSlice.primary.link}
-                                        className={cn(
-                                          'w-full',
-                                          buttonVariants({
-                                            variant: 'outline',
-                                          })
-                                        )}
-                                      >
-                                        {subSlice.primary.label}
-                                      </PrismicNextLink>
-                                    </SheetClose>
-                                  </AccordionContent>
-                                )
-                              }
-                            })}
-                        </AccordionItem>
-                      </Accordion>
-                    </li>
+                    <AccordionItem
+                      key={slice.id}
+                      value={`${slice.primary.label}`}
+                      className="border-none py-3"
+                    >
+                      <AccordionTrigger
+                        className={cn(
+                          'flex justify-center rounded-lg border text-primary [&[data-state=open]]:mb-4',
+                          buttonVariants({ variant: 'link' })
+                        )}
+                      >
+                        {slice.primary.label}
+                      </AccordionTrigger>
+                      {allSlices.length > 0 &&
+                        allSlices.map((subSlice, index) => {
+                          if (subSlice.slice_type === 'sub_menu_item') {
+                            return (
+                              <AccordionContent key={subSlice.id}>
+                                <SheetClose asChild>
+                                  <PrismicNextLink
+                                    field={subSlice.primary.link}
+                                    className={cn(
+                                      'w-full',
+                                      buttonVariants({
+                                        variant: 'outline',
+                                      })
+                                    )}
+                                  >
+                                    {subSlice.primary.label}
+                                  </PrismicNextLink>
+                                </SheetClose>
+                              </AccordionContent>
+                            )
+                          }
+                        })}
+                    </AccordionItem>
                   )
                 }
                 return (
-                  <li key={slice.id}>
-                    <SheetClose asChild>
-                      <Button asChild variant={'outline'} className="flex">
-                        <PrismicNextLink field={slice.primary.link}>
-                          {slice.primary.label}
-                        </PrismicNextLink>
-                      </Button>
-                    </SheetClose>
-                  </li>
+                  <SheetClose key={slice.id} asChild className="my-2">
+                    <Button asChild variant={'outline'} className="flex">
+                      <PrismicNextLink field={slice.primary.link}>
+                        {slice.primary.label}
+                      </PrismicNextLink>
+                    </Button>
+                  </SheetClose>
                 )
               })}
-          </ul>
+            </Accordion>
+          )}
         </SheetContent>
       </Sheet>
     </div>
