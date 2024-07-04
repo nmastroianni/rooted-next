@@ -67,7 +67,7 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
             field={slice.primary.sub_heading}
             components={{
               paragraph: ({ children }) => (
-                <p className="text-muted-foreground text-2xl lg:text-3xl">
+                <p className="text-muted-foreground text-2xl lg:text-3xl text-center">
                   {children}
                 </p>
               ),

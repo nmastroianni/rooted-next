@@ -1,0 +1,16 @@
+{
+  "id": "service_target",
+  "type": "SharedSlice",
+  "name": "ServiceTarget",
+  "description": "ServiceTarget",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

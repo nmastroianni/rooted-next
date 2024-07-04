@@ -29,6 +29,44 @@
           }
         }
       }
+    },
+    "Column 2": {
+      "slices1": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "footer_logo": {
+              "type": "SharedSlice"
+            },
+            "link_list": {
+              "type": "SharedSlice"
+            },
+            "contact_info": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "Column 3": {
+      "slices2": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "link_list": {
+              "type": "SharedSlice"
+            },
+            "footer_logo": {
+              "type": "SharedSlice"
+            },
+            "contact_info": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
     }
   }
 }

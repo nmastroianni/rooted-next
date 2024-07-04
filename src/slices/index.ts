@@ -10,6 +10,7 @@ export const components = {
   link_list: dynamic(() => import("./LinkList")),
   menu_item: dynamic(() => import("./MenuItem")),
   rich_text: dynamic(() => import("./RichText")),
+  service_target: dynamic(() => import("./ServiceTarget")),
   sub_menu_heading: dynamic(() => import("./SubMenuHeading")),
   sub_menu_item: dynamic(() => import("./SubMenuItem")),
 };

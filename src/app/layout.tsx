@@ -4,6 +4,8 @@ import './globals.css'
 import { PrismicPreview } from '@prismicio/next'
 import { createClient, repositoryName } from '@/prismicio'
 import Header from '@/components/layout/Header/Header'
+import Footer from '@/components/layout/Footer/Footer'
+import { cn } from '@/lib/utils'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,9 +29,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={cn(
+          'flex min-h-screen flex-col justify-between bg-background font-sans antialiased',
+          inter.className
+        )}
+      >
         <Header />
         <main>{children}</main>
+        <Footer />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>

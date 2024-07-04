@@ -77,6 +77,23 @@
           "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
+      "services": {
+        "type": "Group",
+        "config": {
+          "label": "Services",
+          "repeat": true,
+          "fields": {
+            "service": {
+              "type": "Link",
+              "config": {
+                "label": "Service",
+                "select": "document",
+                "customtypes": ["service"]
+              }
+            }
+          }
+        }
+      },
       "specialties": {
         "type": "StructuredText",
         "config": {

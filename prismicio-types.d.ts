@@ -34,6 +34,21 @@ export interface ClinicianDocumentDataApproachesItem {
   approach: prismic.KeyTextField;
 }
 
+/**
+ * Item in *Clinician → Services*
+ */
+export interface ClinicianDocumentDataServicesItem {
+  /**
+   * Service field in *Clinician → Services*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clinician.services[].service
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  service: prismic.ContentRelationshipField<"service">;
+}
+
 type ClinicianDocumentDataSlicesSlice = RichTextSlice;
 
 /**
@@ -105,6 +120,17 @@ interface ClinicianDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   about: prismic.RichTextField;
+
+  /**
+   * Services field in *Clinician*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clinician.services[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  services: prismic.GroupField<Simplify<ClinicianDocumentDataServicesItem>>;
 
   /**
    * Specialties field in *Clinician*
@@ -192,6 +218,16 @@ type FooterDocumentDataSlicesSlice =
   | LinkListSlice
   | FooterLogoSlice;
 
+type FooterDocumentDataSlices1Slice =
+  | FooterLogoSlice
+  | LinkListSlice
+  | ContactInfoSlice;
+
+type FooterDocumentDataSlices2Slice =
+  | LinkListSlice
+  | FooterLogoSlice
+  | ContactInfoSlice;
+
 /**
  * Content for Footer documents
  */
@@ -205,7 +241,25 @@ interface FooterDocumentData {
    * - **Tab**: Column 1
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice>;
+  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice> /**
+   * Slice Zone field in *Footer*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.slices1[]
+   * - **Tab**: Column 2
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */;
+  slices1: prismic.SliceZone<FooterDocumentDataSlices1Slice> /**
+   * Slice Zone field in *Footer*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.slices2[]
+   * - **Tab**: Column 3
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */;
+  slices2: prismic.SliceZone<FooterDocumentDataSlices2Slice>;
 }
 
 /**
@@ -468,12 +522,34 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ServiceDocumentDataSlicesSlice = RichTextSlice;
+type ServiceDocumentDataSlicesSlice = ServiceTargetSlice | RichTextSlice;
 
 /**
  * Content for Service documents
  */
 interface ServiceDocumentData {
+  /**
+   * Title field in *Service*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Service*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Describe the service
+   * - **API ID Path**: service.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
   /**
    * Slice Zone field in *Service*
    *
@@ -1428,6 +1504,36 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for ServiceTarget Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceTargetSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ServiceTarget*
+ */
+type ServiceTargetSliceVariation = ServiceTargetSliceDefault;
+
+/**
+ * ServiceTarget Shared Slice
+ *
+ * - **API ID**: `service_target`
+ * - **Description**: ServiceTarget
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceTargetSlice = prismic.SharedSlice<
+  "service_target",
+  ServiceTargetSliceVariation
+>;
+
+/**
  * Primary content in *SubMenuHeading → Default → Primary*
  */
 export interface SubMenuHeadingSliceDefaultPrimary {
@@ -1589,10 +1695,13 @@ declare module "@prismicio/client" {
       ClinicianDocumentData,
       ClinicianDocumentDataFocusesItem,
       ClinicianDocumentDataApproachesItem,
+      ClinicianDocumentDataServicesItem,
       ClinicianDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
+      FooterDocumentDataSlices1Slice,
+      FooterDocumentDataSlices2Slice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
@@ -1655,6 +1764,9 @@ declare module "@prismicio/client" {
       RichTextSliceVariation,
       RichTextSliceDefault,
       RichTextSliceSecondary,
+      ServiceTargetSlice,
+      ServiceTargetSliceVariation,
+      ServiceTargetSliceDefault,
       SubMenuHeadingSlice,
       SubMenuHeadingSliceDefaultPrimary,
       SubMenuHeadingSliceVariation,
