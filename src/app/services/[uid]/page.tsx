@@ -1,9 +1,11 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { SliceZone } from '@prismicio/react'
-
+import { PrismicRichText } from '@/components/typography/PrismicRichText'
 import { createClient } from '@/prismicio'
 import { components } from '@/slices'
+import Section from '@/components/layout/Section'
+import Heading from '@/components/typography/Heading'
 
 type Params = { uid: string }
 
@@ -15,7 +17,20 @@ export default async function Page({ params }: { params: Params }) {
 
   return (
     <>
-      <h1>SERVICE</h1>
+      <Section width="xl">
+        <PrismicRichText
+          field={page.data.title}
+          components={{
+            heading1: ({ children }) => (
+              <Heading as="h1" size="5xl" className="lg:text-center">
+                {children}
+              </Heading>
+            ),
+          }}
+        />
+        <PrismicRichText field={page.data.description} />
+        <hr />
+      </Section>
       <SliceZone slices={page.data.slices} components={components} />
     </>
   )

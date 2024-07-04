@@ -1,25 +1,81 @@
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import Section from '@/components/layout/Section'
+import Heading from '@/components/typography/Heading'
+import { PrismicRichText } from '@/components/typography/PrismicRichText'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { asText, Content, isFilled } from '@prismicio/client'
+import { PrismicNextImage } from '@prismicio/next'
+import { SliceComponentProps } from '@prismicio/react'
+import { Ultra } from 'next/font/google'
 
 /**
  * Props for `ServiceTarget`.
  */
-export type ServiceTargetProps =
-  SliceComponentProps<Content.ServiceTargetSlice>;
+export type ServiceTargetProps = SliceComponentProps<Content.ServiceTargetSlice>
 
 /**
  * Component for "ServiceTarget" Slices.
  */
 const ServiceTarget = ({ slice }: ServiceTargetProps): JSX.Element => {
   return (
-    <section
+    <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      width="2xl"
     >
-      Placeholder component for service_target (variation: {slice.variation})
-      Slices
-    </section>
-  );
-};
+      {isFilled.group(slice.primary.targets) && (
+        <ul className={cn('flex flex-wrap gap-4 lg:gap-8 justify-center')}>
+          {slice.primary.targets.map((target, i) => {
+            return (
+              <li key={slice.id + asText(target.target_title) + i}>
+                <Card className="max-w-lg">
+                  <CardHeader className="relative min-h-40 flex flex-col justify-center">
+                    <PrismicNextImage
+                      field={target.target_image}
+                      fill
+                      className="object-cover opacity-20 rounded-t-xl"
+                    />
+                    <PrismicRichText
+                      field={target.target_title}
+                      components={{
+                        heading2: ({ children }) => (
+                          <Heading as="h2" size="3xl" className="z-10">
+                            {children}
+                          </Heading>
+                        ),
+                      }}
+                    />
+                  </CardHeader>
+                  <CardContent>
+                    <PrismicRichText field={target.target_description} />
+                    <PrismicRichText
+                      field={target.issue_list}
+                      components={{
+                        list: ({ children }) => {
+                          return (
+                            <ul className="flex flex-wrap list-disc lg:text-xl max-w-prose">
+                              {children}
+                            </ul>
+                          )
+                        },
+                        listItem: ({ children }) => {
+                          return (
+                            <li className="ml-4 md:ml-6 lg:ml-8 xl:ml-10">
+                              {children}
+                            </li>
+                          )
+                        },
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </Section>
+  )
+}
 
-export default ServiceTarget;
+export default ServiceTarget

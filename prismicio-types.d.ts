@@ -1504,6 +1504,68 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *ServiceTarget → Default → Primary → Targets*
+ */
+export interface ServiceTargetSliceDefaultPrimaryTargetsItem {
+  /**
+   * Target Title field in *ServiceTarget → Default → Primary → Targets*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_target.default.primary.targets[].target_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  target_title: prismic.TitleField;
+
+  /**
+   * Target Image field in *ServiceTarget → Default → Primary → Targets*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_target.default.primary.targets[].target_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  target_image: prismic.ImageField<never>;
+
+  /**
+   * Target Description field in *ServiceTarget → Default → Primary → Targets*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_target.default.primary.targets[].target_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  target_description: prismic.RichTextField;
+
+  /**
+   * Issue List field in *ServiceTarget → Default → Primary → Targets*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_target.default.primary.targets[].issue_list
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  issue_list: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ServiceTarget → Default → Primary*
+ */
+export interface ServiceTargetSliceDefaultPrimary {
+  /**
+   * Targets field in *ServiceTarget → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_target.default.primary.targets[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  targets: prismic.GroupField<
+    Simplify<ServiceTargetSliceDefaultPrimaryTargetsItem>
+  >;
+}
+
+/**
  * Default variation for ServiceTarget Slice
  *
  * - **API ID**: `default`
@@ -1512,7 +1574,7 @@ export type RichTextSlice = prismic.SharedSlice<
  */
 export type ServiceTargetSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ServiceTargetSliceDefaultPrimary>,
   never
 >;
 
@@ -1765,6 +1827,8 @@ declare module "@prismicio/client" {
       RichTextSliceDefault,
       RichTextSliceSecondary,
       ServiceTargetSlice,
+      ServiceTargetSliceDefaultPrimaryTargetsItem,
+      ServiceTargetSliceDefaultPrimary,
       ServiceTargetSliceVariation,
       ServiceTargetSliceDefault,
       SubMenuHeadingSlice,

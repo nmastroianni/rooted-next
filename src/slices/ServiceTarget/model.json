@@ -10,7 +10,54 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "targets": {
+          "type": "Group",
+          "config": {
+            "label": "Targets",
+            "repeat": true,
+            "fields": {
+              "target_title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Target Title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "heading2"
+                }
+              },
+              "target_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Target Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "target_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Target Description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "paragraph,strong,em,hyperlink"
+                }
+              },
+              "issue_list": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Issue List",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "list-item,o-list-item"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }
