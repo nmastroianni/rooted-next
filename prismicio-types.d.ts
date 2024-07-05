@@ -289,7 +289,11 @@ interface FooterDocumentData {
 export type FooterDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, 'footer', Lang>
 
-type HomepageDocumentDataSlicesSlice = RichTextSlice | HeroSlice
+type HomepageDocumentDataSlicesSlice =
+  | ImageWithTextSlice
+  | FeaturingSlice
+  | RichTextSlice
+  | HeroSlice
 
 /**
  * Content for Homepage documents
@@ -465,7 +469,11 @@ export type LayoutDocument<Lang extends string = string> =
     Lang
   >
 
-type PageDocumentDataSlicesSlice = ContentIndexSlice | RichTextSlice
+type PageDocumentDataSlicesSlice =
+  | ImageWithTextSlice
+  | FeaturingSlice
+  | ContentIndexSlice
+  | RichTextSlice
 
 /**
  * Content for Page documents
@@ -890,6 +898,223 @@ type ContentIndexSliceVariation = ContentIndexSliceDefault
 export type ContentIndexSlice = prismic.SharedSlice<
   'content_index',
   ContentIndexSliceVariation
+>
+
+/**
+ * Item in *Featuring → Default → Primary → Features*
+ */
+export interface FeaturingSliceDefaultPrimaryFeaturesItem {
+  /**
+   * Image field in *Featuring → Default → Primary → Features*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.default.primary.features[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Feature Heading field in *Featuring → Default → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.default.primary.features[].feature_heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_heading: prismic.RichTextField
+
+  /**
+   * Feature Description field in *Featuring → Default → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.default.primary.features[].feature_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_description: prismic.RichTextField
+
+  /**
+   * Button Label field in *Featuring → Default → Primary → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.default.primary.features[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField
+
+  /**
+   * Button Link field in *Featuring → Default → Primary → Features*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.default.primary.features[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField
+}
+
+/**
+ * Item in *Featuring → No Image → Primary → Features*
+ */
+export interface FeaturingSliceNoImagePrimaryFeaturesItem {
+  /**
+   * Feature Heading field in *Featuring → No Image → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.noImage.primary.features[].feature_heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_heading: prismic.RichTextField
+
+  /**
+   * Feature Description field in *Featuring → No Image → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.noImage.primary.features[].feature_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  feature_description: prismic.RichTextField
+
+  /**
+   * Button Label field in *Featuring → No Image → Primary → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.noImage.primary.features[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField
+
+  /**
+   * Button Link field in *Featuring → No Image → Primary → Features*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.noImage.primary.features[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField
+}
+
+/**
+ * Primary content in *Featuring → Default → Primary*
+ */
+export interface FeaturingSliceDefaultPrimary {
+  /**
+   * Heading field in *Featuring → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+
+  /**
+   * Description field in *Featuring → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField
+
+  /**
+   * Features field in *Featuring → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.default.primary.features[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  features: prismic.GroupField<
+    Simplify<FeaturingSliceDefaultPrimaryFeaturesItem>
+  >
+}
+
+/**
+ * Default variation for Featuring Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturingSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<FeaturingSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Primary content in *Featuring → No Image → Primary*
+ */
+export interface FeaturingSliceNoImagePrimary {
+  /**
+   * Heading field in *Featuring → No Image → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.noImage.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+
+  /**
+   * Description field in *Featuring → No Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.noImage.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField
+
+  /**
+   * Features field in *Featuring → No Image → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.noImage.primary.features[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  features: prismic.GroupField<
+    Simplify<FeaturingSliceNoImagePrimaryFeaturesItem>
+  >
+}
+
+/**
+ * No Image variation for Featuring Slice
+ *
+ * - **API ID**: `noImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturingSliceNoImage = prismic.SharedSliceVariation<
+  'noImage',
+  Simplify<FeaturingSliceNoImagePrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Featuring*
+ */
+type FeaturingSliceVariation = FeaturingSliceDefault | FeaturingSliceNoImage
+
+/**
+ * Featuring Shared Slice
+ *
+ * - **API ID**: `featuring`
+ * - **Description**: Featuring
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturingSlice = prismic.SharedSlice<
+  'featuring',
+  FeaturingSliceVariation
 >
 
 /**
@@ -1342,6 +1567,285 @@ type HeroSliceVariation =
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>
+
+/**
+ * Item in *ImageWithText → Default → Primary → Buttons*
+ */
+export interface ImageWithTextSliceDefaultPrimaryButtonsItem {
+  /**
+   * Button Label field in *ImageWithText → Default → Primary → Buttons*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.default.primary.buttons[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField
+
+  /**
+   * Button Link field in *ImageWithText → Default → Primary → Buttons*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.default.primary.buttons[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField
+
+  /**
+   * Button Style field in *ImageWithText → Default → Primary → Buttons*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: image_with_text.default.primary.buttons[].button_style
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_style: prismic.SelectField<
+    'default' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link',
+    'filled'
+  >
+}
+
+/**
+ * Item in *ImageWithText → Right Image → Primary → Buttons*
+ */
+export interface ImageWithTextSliceRightImagePrimaryButtonsItem {
+  /**
+   * Button Label field in *ImageWithText → Right Image → Primary → Buttons*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.rightImage.primary.buttons[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField
+
+  /**
+   * Button Link field in *ImageWithText → Right Image → Primary → Buttons*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.rightImage.primary.buttons[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField
+
+  /**
+   * Button Style field in *ImageWithText → Right Image → Primary → Buttons*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: default
+   * - **API ID Path**: image_with_text.rightImage.primary.buttons[].button_style
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  button_style: prismic.SelectField<
+    'default' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'link',
+    'filled'
+  >
+}
+
+/**
+ * Primary content in *ImageWithText → Default → Primary*
+ */
+export interface ImageWithTextSliceDefaultPrimary {
+  /**
+   * Background field in *ImageWithText → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_with_text.default.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  background: prismic.BooleanField
+
+  /**
+   * Image field in *ImageWithText → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Heading field in *ImageWithText → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+
+  /**
+   * Description field in *ImageWithText → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField
+
+  /**
+   * Left List field in *ImageWithText → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.default.primary.left_list
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  left_list: prismic.RichTextField
+
+  /**
+   * Right List field in *ImageWithText → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.default.primary.right_list
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  right_list: prismic.RichTextField
+
+  /**
+   * Buttons field in *ImageWithText → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.default.primary.buttons[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  buttons: prismic.GroupField<
+    Simplify<ImageWithTextSliceDefaultPrimaryButtonsItem>
+  >
+}
+
+/**
+ * Default variation for ImageWithText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageWithTextSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<ImageWithTextSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Primary content in *ImageWithText → Right Image → Primary*
+ */
+export interface ImageWithTextSliceRightImagePrimary {
+  /**
+   * Background field in *ImageWithText → Right Image → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_with_text.rightImage.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  background: prismic.BooleanField
+
+  /**
+   * Image field in *ImageWithText → Right Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.rightImage.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>
+
+  /**
+   * Heading field in *ImageWithText → Right Image → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.rightImage.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+
+  /**
+   * Description field in *ImageWithText → Right Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.rightImage.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField
+
+  /**
+   * Left List field in *ImageWithText → Right Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.rightImage.primary.left_list
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  left_list: prismic.RichTextField
+
+  /**
+   * Right List field in *ImageWithText → Right Image → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.rightImage.primary.right_list
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  right_list: prismic.RichTextField
+
+  /**
+   * Buttons field in *ImageWithText → Right Image → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_with_text.rightImage.primary.buttons[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  buttons: prismic.GroupField<
+    Simplify<ImageWithTextSliceRightImagePrimaryButtonsItem>
+  >
+}
+
+/**
+ * Right Image variation for ImageWithText Slice
+ *
+ * - **API ID**: `rightImage`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageWithTextSliceRightImage = prismic.SharedSliceVariation<
+  'rightImage',
+  Simplify<ImageWithTextSliceRightImagePrimary>,
+  never
+>
+
+/**
+ * Slice variation for *ImageWithText*
+ */
+type ImageWithTextSliceVariation =
+  | ImageWithTextSliceDefault
+  | ImageWithTextSliceRightImage
+
+/**
+ * ImageWithText Shared Slice
+ *
+ * - **API ID**: `image_with_text`
+ * - **Description**: ImageWithText
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageWithTextSlice = prismic.SharedSlice<
+  'image_with_text',
+  ImageWithTextSliceVariation
+>
 
 /**
  * Item in *LinkList → Default → Primary → Links*
@@ -1879,6 +2383,14 @@ declare module '@prismicio/client' {
       ContentIndexSliceDefaultPrimary,
       ContentIndexSliceVariation,
       ContentIndexSliceDefault,
+      FeaturingSlice,
+      FeaturingSliceDefaultPrimaryFeaturesItem,
+      FeaturingSliceDefaultPrimary,
+      FeaturingSliceNoImagePrimaryFeaturesItem,
+      FeaturingSliceNoImagePrimary,
+      FeaturingSliceVariation,
+      FeaturingSliceDefault,
+      FeaturingSliceNoImage,
       FooterElementSlice,
       FooterElementSliceDefaultPrimary,
       FooterElementSliceVariation,
@@ -1899,6 +2411,14 @@ declare module '@prismicio/client' {
       HeroSliceDefault,
       HeroSliceContentHeight,
       HeroSliceWithImage,
+      ImageWithTextSlice,
+      ImageWithTextSliceDefaultPrimaryButtonsItem,
+      ImageWithTextSliceDefaultPrimary,
+      ImageWithTextSliceRightImagePrimaryButtonsItem,
+      ImageWithTextSliceRightImagePrimary,
+      ImageWithTextSliceVariation,
+      ImageWithTextSliceDefault,
+      ImageWithTextSliceRightImage,
       LinkListSlice,
       LinkListSliceDefaultPrimaryLinksItem,
       LinkListSliceDefaultPrimary,
