@@ -45,10 +45,10 @@ const MobileMenu = ({
         <SheetTrigger
           className={cn(
             'hover:bg-transparent',
-            buttonVariants({ variant: 'link' })
+            buttonVariants({ variant: 'link' }),
           )}
         >
-          <HiMenu className="text-primary-foreground h-8 w-8" />
+          <HiMenu className="h-8 w-8 text-primary-foreground" />
           <span className="sr-only">Open Main Menu</span>
         </SheetTrigger>
         <SheetContent>
@@ -59,7 +59,7 @@ const MobileMenu = ({
               </SheetTitle>
             )}
             {isFilled.keyText(phone) && (
-              <p className="text-sm">
+              <p className="py-3 text-center text-sm">
                 <PrismicNextLink field={data.cta_link}>{phone}</PrismicNextLink>
               </p>
             )}
@@ -72,7 +72,7 @@ const MobileMenu = ({
 
           {slices.length > 0 && (
             <Accordion type="single" collapsible className="my-5">
-              {slices.map((slice) => {
+              {slices.map(slice => {
                 if (slice.variation === 'withSubMenu') {
                   const slicePrimary =
                     slice.primary as MenuItemSliceWithSubMenuPrimary
@@ -92,7 +92,7 @@ const MobileMenu = ({
                       <AccordionTrigger
                         className={cn(
                           'flex justify-center rounded-lg border text-primary [&[data-state=open]]:mb-4',
-                          buttonVariants({ variant: 'link' })
+                          buttonVariants({ variant: 'link' }),
                         )}
                       >
                         {slice.primary.label}
@@ -109,7 +109,7 @@ const MobileMenu = ({
                                       'w-full',
                                       buttonVariants({
                                         variant: 'outline',
-                                      })
+                                      }),
                                     )}
                                   >
                                     {subSlice.primary.label}

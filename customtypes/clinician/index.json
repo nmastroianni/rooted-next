@@ -36,6 +36,18 @@
           "thumbnails": []
         }
       },
+      "status": {
+        "type": "Select",
+        "config": {
+          "label": "Status",
+          "placeholder": "",
+          "options": [
+            "Accepting New Clients",
+            "Waitlist for New Clients",
+            "Not Accepting New Clients"
+          ]
+        }
+      },
       "focuses": {
         "type": "Group",
         "config": {

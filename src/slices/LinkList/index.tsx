@@ -19,13 +19,13 @@ const LinkList = ({ slice, index }: LinkListProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col flex-1"
+      className="flex flex-1 flex-col items-center lg:items-start"
     >
       <PrismicRichText
         field={slice.primary.heading}
         components={{
           heading2: ({ children }) => (
-            <Heading as="h2" size="3xl" className="text-background pb-4">
+            <Heading as="h2" size="3xl" className="pb-4 text-background">
               {children}
             </Heading>
           ),

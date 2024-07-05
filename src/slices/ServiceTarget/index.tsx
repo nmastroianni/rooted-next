@@ -24,16 +24,16 @@ const ServiceTarget = ({ slice }: ServiceTargetProps): JSX.Element => {
       width="2xl"
     >
       {isFilled.group(slice.primary.targets) && (
-        <ul className={cn('flex flex-wrap gap-4 lg:gap-8 justify-center')}>
+        <ul className={cn('flex flex-wrap justify-center gap-4 lg:gap-8')}>
           {slice.primary.targets.map((target, i) => {
             return (
               <li key={slice.id + asText(target.target_title) + i}>
                 <Card className="max-w-lg">
-                  <CardHeader className="relative min-h-40 flex flex-col justify-center">
+                  <CardHeader className="relative flex min-h-40 flex-col justify-center">
                     <PrismicNextImage
                       field={target.target_image}
                       fill
-                      className="object-cover opacity-20 rounded-t-xl"
+                      className="rounded-t-xl object-cover opacity-20"
                     />
                     <PrismicRichText
                       field={target.target_title}
@@ -53,7 +53,7 @@ const ServiceTarget = ({ slice }: ServiceTargetProps): JSX.Element => {
                       components={{
                         list: ({ children }) => {
                           return (
-                            <ul className="flex flex-wrap list-disc lg:text-xl max-w-prose">
+                            <ul className="flex max-w-prose list-disc flex-col flex-wrap items-center gap-4 lg:flex-row lg:text-xl">
                               {children}
                             </ul>
                           )
