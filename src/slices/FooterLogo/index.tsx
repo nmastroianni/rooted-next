@@ -20,10 +20,10 @@ const FooterLogo = ({ slice }: FooterLogoProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="flex flex-col justify-evenly"
     >
-      <PrismicNextImage field={slice.primary.logo} />
+      <PrismicNextImage field={slice.primary.logo} width={157} />
       {slice.primary.buttons.length > 0 && (
         <>
-          <ul className="flex gap-4 py-3 justify-center">
+          <ul className="flex justify-center gap-4 py-3">
             {slice.primary.buttons.map((button, i) => {
               return (
                 <li
@@ -39,9 +39,9 @@ const FooterLogo = ({ slice }: FooterLogoProps): JSX.Element => {
                     className={buttonVariants({ variant: 'default' })}
                   >
                     {button.icon === 'envelope' ? (
-                      <HiMail className="w-5 h-5" />
+                      <HiMail className="h-5 w-5" />
                     ) : (
-                      <HiPhone className="w-5 h-5" />
+                      <HiPhone className="h-5 w-5" />
                     )}
                   </PrismicNextLink>
                 </li>
