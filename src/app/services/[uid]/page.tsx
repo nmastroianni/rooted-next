@@ -25,7 +25,7 @@ export default async function Page({ params }: { params: Params }) {
           field={page.data.title}
           components={{
             heading1: ({ children }) => (
-              <Heading as="h1" size="5xl" className="lg:text-center">
+              <Heading as="h1" size="5xl" className="my-8 lg:text-center">
                 {children}
               </Heading>
             ),

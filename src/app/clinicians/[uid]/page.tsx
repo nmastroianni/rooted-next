@@ -32,14 +32,14 @@ export default async function Page({ params }: { params: Params }) {
           field={page.data.full_name}
           components={{
             heading1: ({ children }) => (
-              <Heading as="h1" size="5xl" className="mb-8 lg:text-center">
+              <Heading as="h1" size="5xl" className="my-8 lg:text-center">
                 {children}
               </Heading>
             ),
           }}
         />
         <PageBreadcrumbs segments={urlSegments} title={page.data.full_name} />
-        <div className="flex justify-center">
+        <div className="mt-16 flex justify-center">
           <div className="relative">
             <PrismicNextImage
               field={page.data.portrait}
@@ -50,12 +50,12 @@ export default async function Page({ params }: { params: Params }) {
             {isFilled.select(page.data.status) &&
             page.data.status !== 'Not Accepting New Clients' ? (
               <Link href="/contact">
-                <Badge className="absolute -right-24 top-0 p-2">
+                <Badge className="absolute -bottom-12 left-1/2 -translate-x-1/2 p-2">
                   {page.data.status}
                 </Badge>
               </Link>
             ) : (
-              <Badge className="absolute -right-24 top-0 cursor-default p-2">
+              <Badge className="absolute -bottom-12 left-1/2 -translate-x-1/2 cursor-default p-2">
                 {page.data.status}
               </Badge>
             )}
@@ -138,7 +138,7 @@ export default async function Page({ params }: { params: Params }) {
                     Services {page.data.first_name} renders:
                   </Heading>
                 </div>
-                <ul className="flex list-none flex-col gap-4 lg:flex-row">
+                <ul className="flex list-none flex-col items-center gap-4 lg:flex-row">
                   {page.data.services.map((item, i) => {
                     const service = item.service as unknown as ServiceDocument
                     return (
