@@ -14,9 +14,9 @@ const Logo = ({ logo, site_title }: PhoneTitleProps): JSX.Element => {
           <>
             {isFilled.keyText(site_title) && (
               <Link href="/">
-                <PrismicNextImage field={logo} />
+                <PrismicNextImage field={logo} width={157} />
                 {!isFilled.image(logo) && (
-                  <h1 className={cn('font-black text-xl')}>{site_title}</h1>
+                  <h1 className={cn('text-xl font-black')}>{site_title}</h1>
                 )}
               </Link>
             )}
