@@ -63,12 +63,12 @@ export default async function Page({ params }: { params: Params }) {
         </div>
         <Section as="div" width="xl">
           <div className="mx-auto max-w-screen-lg rounded-lg bg-background p-4 pt-8">
-            <div className="prose mx-auto mt-6 grid items-center gap-4 lg:prose-lg xl:prose-xl prose-ul:pl-0 lg:mt-8 lg:grid-cols-5 lg:gap-8">
-              <Heading as="h2" size="3xl" className="lg:col-span-2 lg:mb-0">
+            <div className="prose mx-auto mt-6 grid place-content-center gap-4 lg:prose-lg xl:prose-xl prose-ul:pl-0 prose-li:my-0 lg:mt-8 lg:grid-cols-5 lg:gap-8">
+              <Heading as="h2" size="3xl" className="mb-0 lg:col-span-2">
                 {page.data.first_name} focuses on:
               </Heading>
               {isFilled.group(page.data.focuses) && (
-                <ul className="flex list-none flex-wrap gap-4 lg:col-span-3">
+                <ul className="flex list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
                   {page.data.focuses.map((focus, i) => {
                     return (
                       <li
@@ -81,16 +81,12 @@ export default async function Page({ params }: { params: Params }) {
                 </ul>
               )}
             </div>
-            <div className="prose mx-auto mt-6 grid items-center justify-center gap-4 pb-4 lg:prose-lg xl:prose-xl prose-ul:pl-0 lg:mt-8 lg:grid-cols-5 lg:gap-8 lg:pb-8">
-              <Heading
-                as="h2"
-                size="3xl"
-                className="flex-1 lg:col-span-2 lg:mb-0"
-              >
+            <div className="prose mx-auto mt-6 grid place-content-center justify-center gap-4 pb-4 lg:prose-lg xl:prose-xl prose-ul:pl-0 prose-li:my-0 lg:mt-8 lg:grid-cols-5 lg:gap-8 lg:pb-8">
+              <Heading as="h2" size="3xl" className="mb-0 flex-1 lg:col-span-2">
                 Approaches:
               </Heading>
               {isFilled.group(page.data.approaches) && (
-                <ul className="flex flex-grow list-none flex-wrap gap-4 lg:col-span-3">
+                <ul className="flex flex-grow list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
                   {page.data.approaches.map((approach, i) => {
                     return (
                       <li
@@ -107,7 +103,7 @@ export default async function Page({ params }: { params: Params }) {
                 </ul>
               )}
             </div>
-            <div className="mb-4 flex justify-center lg:mb-12">
+            <div className="mb-12 mt-4 flex justify-center lg:mb-12">
               <PrismicNextLink
                 field={page.data.psychtoday}
                 className={cn(
