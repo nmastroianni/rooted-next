@@ -24,7 +24,11 @@ export default async function Page() {
           addressLocality: 'Cherry Hill',
           addressRegion: 'NJ',
           postalCode: '08003',
+          addressCountry: 'USA',
         },
+        telephone: '+1 (856) 675-2440',
+        image:
+          'https://images.prismic.io/rootedpsychotherapy/ZmDqhZm069VX1ftB_RootedPsychotherapyandCounseling_FF-01.jpg?auto=format,compress',
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: 'Psychotherapy services',
@@ -65,6 +69,8 @@ export default async function Page() {
         },
         founder: 'Jennifer K. Boiler',
         telephone: '+1 (856) 675-2440',
+        image:
+          'https://images.prismic.io/rootedpsychotherapy/ZmDqhZm069VX1ftB_RootedPsychotherapyandCounseling_FF-01.jpg?auto=format,compress',
       },
       {
         '@type': 'WebPage',
