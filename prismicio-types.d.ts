@@ -963,6 +963,16 @@ export interface FeaturingSliceDefaultPrimaryFeaturesItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField
+
+  /**
+   * Button Alt field in *Featuring → Default → Primary → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.default.primary.features[].button_alt
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_alt: prismic.KeyTextField
 }
 
 /**
@@ -1008,6 +1018,16 @@ export interface FeaturingSliceNoImagePrimaryFeaturesItem {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField
+
+  /**
+   * Button Alt field in *Featuring → No Image → Primary → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featuring.noImage.primary.features[].button_alt
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_alt: prismic.KeyTextField
 }
 
 /**

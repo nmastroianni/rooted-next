@@ -44,7 +44,7 @@ const FooterElement = ({ slice }: FooterElementProps): JSX.Element => {
             </div>
           )}
           {multiColumn.data.slices1.length > 0 && (
-            <div className="flex flex-col justify-center lg:flex-row">
+            <div className="flex flex-col justify-center gap-6 lg:flex-row">
               <SliceZone
                 slices={multiColumn.data.slices1}
                 components={components}

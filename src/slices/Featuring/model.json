@@ -76,6 +76,13 @@
                   "placeholder": "",
                   "select": null
                 }
+              },
+              "button_alt": {
+                "type": "Text",
+                "config": {
+                  "label": "Button Alt",
+                  "placeholder": ""
+                }
               }
             }
           }
@@ -146,6 +153,13 @@
                   "label": "Button Link",
                   "placeholder": "",
                   "select": null
+                }
+              },
+              "button_alt": {
+                "type": "Text",
+                "config": {
+                  "label": "Button Alt",
+                  "placeholder": ""
                 }
               }
             }

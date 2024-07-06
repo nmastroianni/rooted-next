@@ -20,7 +20,7 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
     <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={cn('text-primary-foreground relative', {
+      className={cn('relative text-primary-foreground', {
         'bg-primary': slice.variation === 'default',
         'lg:h-[calc(100vh-108px)] lg:min-h-[750px]':
           slice.variation !== 'contentHeight',
@@ -38,10 +38,10 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
       )}
       <div
         className={cn(
-          'mx-auto my-8 flex max-w-screen-2xl flex-col items-center justify-center rounded-lg p-6 lg:p-12 backdrop-blur',
+          'mx-auto my-8 flex max-w-screen-2xl flex-col items-center justify-center rounded-lg p-6 backdrop-blur lg:p-12',
           {
             'bg-background/80': slice.variation !== 'default',
-          }
+          },
         )}
       >
         {isFilled.richText(slice.primary.heading) && (
@@ -52,7 +52,7 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
                 <Heading
                   as={index === 0 ? 'h1' : 'h2'}
                   size="6xl"
-                  className={cn('text-primary', {
+                  className={cn('text-primary lg:text-center', {
                     'text-primary-foreground': slice.variation === 'default',
                   })}
                 >
@@ -67,7 +67,7 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
             field={slice.primary.sub_heading}
             components={{
               paragraph: ({ children }) => (
-                <p className="text-muted-foreground text-2xl lg:text-3xl text-center">
+                <p className="mt-6 text-center text-2xl text-foreground lg:text-3xl">
                   {children}
                 </p>
               ),
@@ -76,8 +76,8 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
         )}
 
         {slice.primary.buttons.length > 0 && (
-          <div className="flex flex-col lg:flex-row gap-6 justify-evenly flex-wrap">
-            {slice.primary.buttons.map((button) => {
+          <div className="flex flex-col flex-wrap justify-evenly gap-6 lg:flex-row">
+            {slice.primary.buttons.map(button => {
               return (
                 <Button
                   key={slice.id + button.button_label}
@@ -85,7 +85,7 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
                   variant={button.button_style || 'default'}
                   size="lg"
                   className={cn('mt-4 lg:mt-8', {
-                    'bg-primary border-background border-2':
+                    'border-2 border-background bg-primary':
                       button.button_style === 'outline',
                     'text-primary':
                       button.button_style === 'link' ||

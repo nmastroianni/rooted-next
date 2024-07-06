@@ -133,6 +133,14 @@
 										"url": "https://prismic.io"
 									}
 								}
+							],
+							[
+								"button_alt",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "taste",
+									"type": "Text"
+								}
 							]
 						]
 					}
@@ -217,6 +225,14 @@
 										"__TYPE__": "ExternalLink",
 										"url": "https://prismic.io"
 									}
+								}
+							],
+							[
+								"button_alt",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "warn",
+									"type": "Text"
 								}
 							]
 						]
