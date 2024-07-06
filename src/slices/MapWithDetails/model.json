@@ -1,0 +1,35 @@
+{
+  "id": "map_with_details",
+  "type": "SharedSlice",
+  "name": "MapWithDetails",
+  "description": "MapWithDetails",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "details": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Details",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,strong,em,hyperlink,list-item,o-list-item"
+          }
+        },
+        "map_url": {
+          "type": "Text",
+          "config": {
+            "label": "Map Url",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

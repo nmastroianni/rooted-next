@@ -49,7 +49,11 @@ export interface ClinicianDocumentDataServicesItem {
   service: prismic.ContentRelationshipField<'service'>
 }
 
-type ClinicianDocumentDataSlicesSlice = RichTextSlice
+type ClinicianDocumentDataSlicesSlice =
+  | ProcessSlice
+  | ImageWithTextSlice
+  | FeaturingSlice
+  | RichTextSlice
 
 /**
  * Content for Clinician documents
@@ -290,6 +294,7 @@ export type FooterDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, 'footer', Lang>
 
 type HomepageDocumentDataSlicesSlice =
+  | ProcessSlice
   | ImageWithTextSlice
   | FeaturingSlice
   | RichTextSlice
@@ -470,6 +475,8 @@ export type LayoutDocument<Lang extends string = string> =
   >
 
 type PageDocumentDataSlicesSlice =
+  | MapWithDetailsSlice
+  | ProcessSlice
   | ImageWithTextSlice
   | FeaturingSlice
   | ContentIndexSlice
@@ -545,7 +552,10 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, 'page', Lang>
 
-type ServiceDocumentDataSlicesSlice = ServiceTargetSlice | RichTextSlice
+type ServiceDocumentDataSlicesSlice =
+  | ProcessSlice
+  | ServiceTargetSlice
+  | RichTextSlice
 
 /**
  * Content for Service documents
@@ -1928,6 +1938,61 @@ export type LinkListSlice = prismic.SharedSlice<
 >
 
 /**
+ * Primary content in *MapWithDetails → Default → Primary*
+ */
+export interface MapWithDetailsSliceDefaultPrimary {
+  /**
+   * Details field in *MapWithDetails → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: map_with_details.default.primary.details
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  details: prismic.RichTextField
+
+  /**
+   * Map Url field in *MapWithDetails → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: map_with_details.default.primary.map_url
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  map_url: prismic.KeyTextField
+}
+
+/**
+ * Default variation for MapWithDetails Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MapWithDetailsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<MapWithDetailsSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *MapWithDetails*
+ */
+type MapWithDetailsSliceVariation = MapWithDetailsSliceDefault
+
+/**
+ * MapWithDetails Shared Slice
+ *
+ * - **API ID**: `map_with_details`
+ * - **Description**: MapWithDetails
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MapWithDetailsSlice = prismic.SharedSlice<
+  'map_with_details',
+  MapWithDetailsSliceVariation
+>
+
+/**
  * Primary content in *MenuItem → Default → Primary*
  */
 export interface MenuItemSliceDefaultPrimary {
@@ -2019,6 +2084,133 @@ export type MenuItemSlice = prismic.SharedSlice<
   'menu_item',
   MenuItemSliceVariation
 >
+
+/**
+ * Item in *Process → Default → Primary → Steps*
+ */
+export interface ProcessSliceDefaultPrimaryStepsItem {
+  /**
+   * Icon field in *Process → Default → Primary → Steps*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<'form' | 'call' | 'calendar' | 'comment'>
+
+  /**
+   * Step Title field in *Process → Default → Primary → Steps*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[].step_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  step_title: prismic.TitleField
+
+  /**
+   * Description field in *Process → Default → Primary → Steps*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField
+
+  /**
+   * Button Label field in *Process → Default → Primary → Steps*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField
+
+  /**
+   * Button Link field in *Process → Default → Primary → Steps*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField
+}
+
+/**
+ * Primary content in *Process → Default → Primary*
+ */
+export interface ProcessSliceDefaultPrimary {
+  /**
+   * Title field in *Process → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Heading field in *Process → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+
+  /**
+   * Description field in *Process → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField
+
+  /**
+   * Steps field in *Process → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: process.default.primary.steps[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  steps: prismic.GroupField<Simplify<ProcessSliceDefaultPrimaryStepsItem>>
+}
+
+/**
+ * Default variation for Process Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProcessSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<ProcessSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Process*
+ */
+type ProcessSliceVariation = ProcessSliceDefault
+
+/**
+ * Process Shared Slice
+ *
+ * - **API ID**: `process`
+ * - **Description**: Process
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProcessSlice = prismic.SharedSlice<'process', ProcessSliceVariation>
 
 /**
  * Primary content in *RichText → Default → Primary*
@@ -2424,12 +2616,21 @@ declare module '@prismicio/client' {
       LinkListSliceDefaultPrimary,
       LinkListSliceVariation,
       LinkListSliceDefault,
+      MapWithDetailsSlice,
+      MapWithDetailsSliceDefaultPrimary,
+      MapWithDetailsSliceVariation,
+      MapWithDetailsSliceDefault,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
       MenuItemSliceWithSubMenuPrimary,
       MenuItemSliceVariation,
       MenuItemSliceDefault,
       MenuItemSliceWithSubMenu,
+      ProcessSlice,
+      ProcessSliceDefaultPrimaryStepsItem,
+      ProcessSliceDefaultPrimary,
+      ProcessSliceVariation,
+      ProcessSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceSecondaryPrimary,

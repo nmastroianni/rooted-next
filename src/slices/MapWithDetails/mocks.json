@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"details": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliqua nulla excepteur pariatur enim minim aute quis dolore."
+						}
+					}
+				]
+			},
+			"map_url": {
+				"__TYPE__": "FieldContent",
+				"value": "slope",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

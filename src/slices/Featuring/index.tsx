@@ -1,19 +1,12 @@
 import Section from '@/components/layout/Section'
-import { Content, isFilled } from '@prismicio/client'
-import { SliceComponentProps } from '@prismicio/react'
-import { PrismicRichText } from '@/components/typography/PrismicRichText'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 import Heading from '@/components/typography/Heading'
-import { cn } from '@/lib/utils'
+import { PrismicRichText } from '@/components/typography/PrismicRichText'
 import { buttonVariants } from '@/components/ui/button'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { Content, isFilled } from '@prismicio/client'
+import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
+import { SliceComponentProps } from '@prismicio/react'
 
 /**
  * Props for `Featuring`.
@@ -44,7 +37,7 @@ const Featuring = ({ slice }: FeaturingProps): JSX.Element => {
           )}
         </div>
       )}
-      <div className="flex flex-col justify-center gap-4 lg:flex-row lg:gap-8">
+      <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-8">
         {isFilled.group(slice.primary.features) && (
           <>
             {slice.primary.features.map((feature, i) => {
@@ -62,25 +55,24 @@ const Featuring = ({ slice }: FeaturingProps): JSX.Element => {
                     </CardHeader>
                   )}
                   <CardContent>
-                    <CardTitle>
-                      <PrismicRichText
-                        field={feature.feature_heading}
-                        components={{
-                          heading3: ({ children }) => (
-                            <Heading
-                              as="h3"
-                              size="3xl"
-                              className="py-3 lg:text-center"
-                            >
-                              {children}
-                            </Heading>
-                          ),
-                        }}
-                      />
-                    </CardTitle>
-                    <CardDescription>
+                    <PrismicRichText
+                      field={feature.feature_heading}
+                      components={{
+                        heading3: ({ children }) => (
+                          <Heading
+                            as="h3"
+                            size="3xl"
+                            className="py-3 lg:text-center"
+                          >
+                            {children}
+                          </Heading>
+                        ),
+                      }}
+                    />
+
+                    {isFilled.richText(feature.feature_description) && (
                       <PrismicRichText field={feature.feature_description} />
-                    </CardDescription>
+                    )}
                   </CardContent>
                   {isFilled.link(feature.button_link) &&
                     isFilled.keyText(feature.button_label) && (

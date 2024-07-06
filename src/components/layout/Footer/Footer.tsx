@@ -9,6 +9,9 @@ const Footer = async () => {
     graphQuery: `
     {
       layout {
+        copyright_text
+        privacy_label
+        privacy_link
         slices1 {
           ...on footer_element {
             variation {

@@ -27,7 +27,7 @@ const ImageWithText = ({ slice }: ImageWithTextProps): JSX.Element => {
         'bg-secondary': slice.primary.background,
       })}
     >
-      <div className="grid place-content-center gap-4 lg:grid-cols-2">
+      <div className="grid gap-4 lg:grid-cols-2">
         <div
           className={cn('order-1 flex flex-col justify-center', {
             'order-2': slice.variation === 'rightImage',
@@ -40,7 +40,7 @@ const ImageWithText = ({ slice }: ImageWithTextProps): JSX.Element => {
           />
         </div>
         <div
-          className={cn('order-2', {
+          className={cn('order-2 mx-auto max-w-prose', {
             'order-1': slice.variation === 'rightImage',
           })}
         >
@@ -49,7 +49,7 @@ const ImageWithText = ({ slice }: ImageWithTextProps): JSX.Element => {
           {listPresent && (
             <div
               className={cn('grid', {
-                'grid-cols-2':
+                'gap-2 lg:grid-cols-2':
                   isFilled.richText(slice.primary.left_list) &&
                   isFilled.richText(slice.primary.right_list),
               })}

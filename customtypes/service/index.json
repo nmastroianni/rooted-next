@@ -35,6 +35,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "process": {
+              "type": "SharedSlice"
+            },
             "service_target": {
               "type": "SharedSlice"
             },
