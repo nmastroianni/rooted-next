@@ -48,6 +48,14 @@
           ]
         }
       },
+      "service_delivery": {
+        "type": "Select",
+        "config": {
+          "label": "Service Delivery",
+          "placeholder": "",
+          "options": ["Telehealth", "In Person", "Hybrid"]
+        }
+      },
       "focuses": {
         "type": "Group",
         "config": {

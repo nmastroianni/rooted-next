@@ -12,6 +12,9 @@ const Footer = async () => {
         copyright_text
         privacy_label
         privacy_link
+        footer_cta
+        footer_cta_label
+        footer_cta_link
         slices1 {
           ...on footer_element {
             variation {

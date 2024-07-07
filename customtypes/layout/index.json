@@ -64,6 +64,28 @@
           "placeholder": ""
         }
       },
+      "footer_cta": {
+        "type": "Text",
+        "config": {
+          "label": "Footer CTA",
+          "placeholder": ""
+        }
+      },
+      "footer_cta_label": {
+        "type": "Text",
+        "config": {
+          "label": "Footer CTA Label",
+          "placeholder": ""
+        }
+      },
+      "footer_cta_link": {
+        "type": "Link",
+        "config": {
+          "label": "Footer CTA Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
       "slices1": {
         "type": "Slices",
         "fieldset": "Slice Zone",

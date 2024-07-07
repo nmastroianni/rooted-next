@@ -51,9 +51,14 @@ const ContentList = async ({
     <>
       <ul>
         {results.length > 0 &&
-          results.map(item => {
+          results.map((item, i) => {
             return (
-              <li key={item.id}>
+              <li
+                key={item.id}
+                className={cn('rounded-lg p-4 lg:p-8', {
+                  'bg-secondary shadow': i % 2 === 0,
+                })}
+              >
                 <Link
                   href={item.url || '#'}
                   className="flex flex-col justify-between border-t border-t-secondary py-10 md:items-start"
@@ -65,7 +70,11 @@ const ContentList = async ({
                     ) || 'View the content'
                   }
                 >
-                  <div className="flex w-full flex-col justify-between md:flex-row md:items-center">
+                  <div
+                    className={
+                      'flex w-full flex-col justify-between md:flex-row md:items-center'
+                    }
+                  >
                     <div className="flex flex-col gap-y-3">
                       <PrismicRichText
                         field={
@@ -74,14 +83,17 @@ const ContentList = async ({
                             : item.data.full_name
                         }
                       />
-                      <div className="flex gap-3">
+                      <div className="mb-6 flex gap-3">
                         {item.tags.length > 0 &&
                           item.tags.map(tag => (
                             <span
                               key={item.id + tag}
                               className={cn(
                                 'block',
-                                badgeVariants({ variant: 'secondary' }),
+                                badgeVariants({
+                                  variant:
+                                    i % 2 === 0 ? 'default' : 'secondary',
+                                }),
                               )}
                             >
                               {tag}
@@ -107,7 +119,12 @@ const ContentList = async ({
                       <HiArrowRight className="h-4 w-4" />
                     </span>
                   </div>
-                  <div className="flex w-full flex-col items-center justify-between lg:flex-row">
+                  <div
+                    className={cn(
+                      'flex w-full flex-col items-center justify-between lg:flex-row',
+                      { 'lg:flex-row-reverse': i % 2 === 0 },
+                    )}
+                  >
                     {item.data.meta_description ? (
                       <div className="prose my-4 shrink-0 lg:prose-lg">
                         {item.data.meta_description}

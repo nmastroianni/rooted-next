@@ -108,6 +108,17 @@ interface ClinicianDocumentData {
   >
 
   /**
+   * Service Delivery field in *Clinician*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clinician.service_delivery
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  service_delivery: prismic.SelectField<'Telehealth' | 'In Person' | 'Hybrid'>
+
+  /**
    * Focuses field in *Clinician*
    *
    * - **Field Type**: Group
@@ -447,6 +458,39 @@ interface LayoutDocumentData {
   copyright_text: prismic.KeyTextField
 
   /**
+   * Footer CTA field in *Layout*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: layout.footer_cta
+   * - **Tab**: Footer
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  footer_cta: prismic.KeyTextField
+
+  /**
+   * Footer CTA Label field in *Layout*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: layout.footer_cta_label
+   * - **Tab**: Footer
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  footer_cta_label: prismic.KeyTextField
+
+  /**
+   * Footer CTA Link field in *Layout*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: layout.footer_cta_link
+   * - **Tab**: Footer
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  footer_cta_link: prismic.LinkField
+
+  /**
    * Slice Zone field in *Layout*
    *
    * - **Field Type**: Slice Zone
@@ -475,6 +519,7 @@ export type LayoutDocument<Lang extends string = string> =
   >
 
 type PageDocumentDataSlicesSlice =
+  | HeroSlice
   | MapWithDetailsSlice
   | ProcessSlice
   | ImageWithTextSlice
