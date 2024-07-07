@@ -37,7 +37,7 @@ const Featuring = ({ slice }: FeaturingProps): JSX.Element => {
           )}
         </div>
       )}
-      <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:gap-8">
+      <div className="flex flex-col items-center justify-center gap-6 lg:flex-row lg:flex-wrap lg:gap-8">
         {isFilled.group(slice.primary.features) && (
           <>
             {slice.primary.features.map((feature, i) => {

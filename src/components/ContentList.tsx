@@ -121,12 +121,12 @@ const ContentList = async ({
                   </div>
                   <div
                     className={cn(
-                      'flex w-full flex-col items-center justify-between lg:flex-row',
+                      'flex w-full flex-col items-center justify-between gap-x-8 lg:flex-row',
                       { 'lg:flex-row-reverse': i % 2 === 0 },
                     )}
                   >
                     {item.data.meta_description ? (
-                      <div className="prose my-4 shrink-0 lg:prose-lg">
+                      <div className="prose my-4 shrink lg:prose-lg">
                         {item.data.meta_description}
                       </div>
                     ) : null}
