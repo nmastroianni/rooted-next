@@ -26,6 +26,7 @@ const MapWithDetails = ({ slice }: MapWithDetailsProps): JSX.Element => {
         <div className="min-h-[500px] overflow-hidden rounded-lg shadow-md lg:h-full">
           {slice.primary.map_url && (
             <iframe
+              title="Map to our location"
               src={slice.primary.map_url}
               width="100%"
               height="100%"

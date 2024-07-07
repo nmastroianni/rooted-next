@@ -13,7 +13,7 @@ import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { ServiceDocument } from '../../../../prismicio-types'
 import Link from 'next/link'
-import { cn } from '@/lib/utils'
+import { cn, generateBreadcrumbs, getOrganization } from '@/lib/utils'
 import { getUrlSegments } from '@/lib/utils'
 import PageBreadcrumbs from '@/components/layout/PageBreadcrumbs'
 import {
@@ -22,6 +22,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { Graph, Offer, Thing } from 'schema-dts'
 
 type Params = { uid: string }
 
@@ -30,9 +31,83 @@ export default async function Page({ params }: { params: Params }) {
   const page = await client
     .getByUID('clinician', params.uid, { fetchLinks: ['service.title'] })
     .catch(() => notFound())
+  const settings = await client.getSingle('settings')
   const urlSegments = getUrlSegments(page.url)
+  const { services } = page.data
+  const jsonServices = services.map((item, i) => {
+    const service = item.service as unknown as ServiceDocument
+    const offer: Offer = {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: asText(service.data.title),
+        url: `https://${settings.data.domain || `example.com`}${service.url}`,
+      },
+    }
+    return offer
+  })
+
+  const { focuses } = page.data
+  const jsonKnows = focuses.map(item => {
+    const thing: Thing = {
+      '@type': 'Thing',
+      name: `${item.focus}`,
+    }
+    return thing
+  })
+  const jsonLd: Graph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Person',
+        '@id': `https://${settings.data.domain || `example.com`}${page.url}#${page.id}`,
+        url: `https://${settings.data.domain || `example.com`}${page.url}`,
+        name: asText(page.data.full_name) || undefined,
+        image: page.data.portrait.url || undefined,
+        knowsAbout: jsonKnows || undefined,
+        worksFor: await getOrganization(),
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Psychotherapy services',
+          itemListElement: jsonServices || undefined,
+        },
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `https://${settings.data.domain || `example.com`}/#page`,
+        url: `https://${settings.data.domain || `example.com`}${page.url}#main-content`,
+        description: page.data.meta_description || undefined,
+        datePublished: page.first_publication_date,
+        dateModified: page.last_publication_date,
+        inLanguage: page.lang || 'en-US',
+        breadcrumb: {
+          '@id': `https://${settings.data.domain || `example.com`}${page.url}#breadcrumbs`,
+        },
+        isPartOf: {
+          '@type': 'WebSite',
+          '@id': `https://${settings.data.domain || `example.com`}/#website`,
+          url: `https://${settings.data.domain || `example.com`}/`,
+          name: settings.data.site_title || undefined,
+          publisher: await getOrganization(),
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `https://${settings.data.domain || `example.com`}${page.url}#breadcrumbs`,
+        itemListElement: generateBreadcrumbs(
+          settings.data.domain,
+          page,
+          urlSegments,
+        ),
+      },
+    ],
+  }
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Section width="xl" className="bg-secondary">
         <PrismicRichText
           field={page.data.full_name}
@@ -45,7 +120,7 @@ export default async function Page({ params }: { params: Params }) {
           }}
         />
         <PageBreadcrumbs segments={urlSegments} title={page.data.full_name} />
-        <div className="mt-16 flex justify-center">
+        <div className="mt-16 flex justify-center" id={page.id}>
           <div className="relative">
             <PrismicNextImage
               field={page.data.portrait}

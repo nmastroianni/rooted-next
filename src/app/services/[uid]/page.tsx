@@ -8,7 +8,12 @@ import Section from '@/components/layout/Section'
 import Heading from '@/components/typography/Heading'
 import { asText } from '@prismicio/client'
 import PageBreadcrumbs from '@/components/layout/PageBreadcrumbs'
-import { getUrlSegments } from '@/lib/utils'
+import {
+  getUrlSegments,
+  generateBreadcrumbs,
+  getOrganization,
+} from '@/lib/utils'
+import { Graph } from 'schema-dts'
 
 type Params = { uid: string }
 
@@ -17,9 +22,47 @@ export default async function Page({ params }: { params: Params }) {
   const page = await client
     .getByUID('service', params.uid)
     .catch(() => notFound())
+  const settings = await client.getSingle('settings')
   const urlSegments = getUrlSegments(page.url)
+  const jsonLd: Graph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `https://${settings.data.domain || `example.com`}/#page`,
+        url: `https://${settings.data.domain || `example.com`}${page.url}#main-content`,
+        description: page.data.meta_description || undefined,
+        datePublished: page.first_publication_date,
+        dateModified: page.last_publication_date,
+        inLanguage: page.lang || 'en-US',
+        breadcrumb: {
+          '@id': `https://${settings.data.domain || `example.com`}${page.url}#breadcrumbs`,
+        },
+        isPartOf: {
+          '@type': 'WebSite',
+          '@id': `https://${settings.data.domain || `example.com`}/#website`,
+          url: `https://${settings.data.domain || `example.com`}/`,
+          name: settings.data.site_title || undefined,
+          publisher: await getOrganization(),
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `https://${settings.data.domain || `example.com`}${page.url}#breadcrumbs`,
+        itemListElement: generateBreadcrumbs(
+          settings.data.domain,
+          page,
+          urlSegments,
+        ),
+      },
+    ],
+  }
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Section width="xl">
         <PrismicRichText
           field={page.data.title}

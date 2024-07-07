@@ -80,9 +80,9 @@ const Featuring = ({ slice }: FeaturingProps): JSX.Element => {
                         <PrismicNextLink
                           field={feature.button_link}
                           className={cn(buttonVariants({ variant: 'default' }))}
-                          aria-label={feature.button_alt || ''}
                         >
                           {feature.button_label}
+                          <span className="sr-only">{` - ${feature.button_alt}`}</span>
                         </PrismicNextLink>
                       </CardFooter>
                     )}
