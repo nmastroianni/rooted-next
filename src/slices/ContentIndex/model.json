@@ -19,7 +19,8 @@
             "placeholder": "",
             "options": [
               "clinician",
-              "service"
+              "service",
+              "post"
             ]
           }
         },

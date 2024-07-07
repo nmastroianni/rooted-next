@@ -1,11 +1,10 @@
+import Pagination from '@/components/Pagination'
 import { cn } from '@/lib/utils'
 import { createClient } from '@/prismicio'
-import { ImageField, SelectField, asText, isFilled } from '@prismicio/client'
+import { ImageField, SelectField, asText } from '@prismicio/client'
 import { PrismicNextImage } from '@prismicio/next'
-import { HiArrowRight } from 'react-icons/hi'
 import Link from 'next/link'
-import { ClinicianDocument, ServiceDocument } from '../../prismicio-types'
-import Pagination from '@/components/Pagination'
+import { HiArrowRight } from 'react-icons/hi'
 import { PrismicRichText } from './typography/PrismicRichText'
 import { badgeVariants } from './ui/badge'
 import { buttonVariants } from './ui/button'
@@ -31,6 +30,15 @@ const ContentList = async ({
       orderings: {
         field: 'my.service.title',
         direction: 'asc',
+      },
+      page: page,
+      pageSize: display,
+    })
+  } else if (contentType === 'post') {
+    prismicData = await client.getByType('post', {
+      orderings: {
+        field: 'document.first_publication_date',
+        direction: 'desc',
       },
       page: page,
       pageSize: display,
@@ -64,7 +72,7 @@ const ContentList = async ({
                   className="flex flex-col justify-between border-t border-t-secondary py-10 lg:items-start"
                   aria-label={
                     asText(
-                      item.type === 'service'
+                      item.type === 'service' || item.type === 'post'
                         ? item.data.title
                         : item.data.full_name,
                     ) || 'View the content'
@@ -78,7 +86,7 @@ const ContentList = async ({
                     <div className="flex flex-col gap-y-3">
                       <PrismicRichText
                         field={
-                          item.type === 'service'
+                          item.type === 'service' || item.type === 'post'
                             ? item.data.title
                             : item.data.full_name
                         }
@@ -111,7 +119,7 @@ const ContentList = async ({
                       <span className="sr-only">
                         : Read{' '}
                         {asText(
-                          item.type === 'service'
+                          item.type === 'service' || item.type === 'post'
                             ? item.data.title
                             : item.data.full_name,
                         )}
@@ -125,16 +133,20 @@ const ContentList = async ({
                       { 'lg:flex-row-reverse': i % 2 === 0 },
                     )}
                   >
-                    {item.data.meta_description ? (
+                    {item.type === 'post' || item.data.meta_description ? (
                       <div className="prose my-4 shrink lg:prose-lg">
-                        {item.data.meta_description}
+                        {item.type === 'post'
+                          ? item.data.excerpt
+                          : item.data.meta_description}
                       </div>
                     ) : null}
                     <PrismicNextImage
                       field={
                         item.type === 'clinician'
                           ? item.data.portrait
-                          : item.data.meta_image
+                          : item.type === 'post'
+                            ? item.data.featured_image
+                            : item.data.meta_image
                       }
                       imgixParams={{ ar: '1:1', fit: 'crop' }}
                       quality={75}
