@@ -50,6 +50,7 @@ export interface ClinicianDocumentDataServicesItem {
 }
 
 type ClinicianDocumentDataSlicesSlice =
+  | FrequentlyAskedQuestionsSlice
   | ProcessSlice
   | ImageWithTextSlice
   | FeaturingSlice
@@ -305,6 +306,7 @@ export type FooterDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, 'footer', Lang>
 
 type HomepageDocumentDataSlicesSlice =
+  | FrequentlyAskedQuestionsSlice
   | ProcessSlice
   | ImageWithTextSlice
   | FeaturingSlice
@@ -519,6 +521,7 @@ export type LayoutDocument<Lang extends string = string> =
   >
 
 type PageDocumentDataSlicesSlice =
+  | FrequentlyAskedQuestionsSlice
   | HeroSlice
   | MapWithDetailsSlice
   | ProcessSlice
@@ -598,6 +601,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, 'page', Lang>
 
 type ServiceDocumentDataSlicesSlice =
+  | FrequentlyAskedQuestionsSlice
   | ProcessSlice
   | ServiceTargetSlice
   | RichTextSlice
@@ -1347,6 +1351,89 @@ type FooterLogoSliceVariation = FooterLogoSliceDefault
 export type FooterLogoSlice = prismic.SharedSlice<
   'footer_logo',
   FooterLogoSliceVariation
+>
+
+/**
+ * Item in *FrequentlyAskedQuestions → Default → Primary → Questions*
+ */
+export interface FrequentlyAskedQuestionsSliceDefaultPrimaryQuestionsItem {
+  /**
+   * Question field in *FrequentlyAskedQuestions → Default → Primary → Questions*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.questions[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.RichTextField
+
+  /**
+   * Answer field in *FrequentlyAskedQuestions → Default → Primary → Questions*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.questions[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField
+}
+
+/**
+ * Primary content in *FrequentlyAskedQuestions → Default → Primary*
+ */
+export interface FrequentlyAskedQuestionsSliceDefaultPrimary {
+  /**
+   * Heading field in *FrequentlyAskedQuestions → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+
+  /**
+   * Questions field in *FrequentlyAskedQuestions → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.questions[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  questions: prismic.GroupField<
+    Simplify<FrequentlyAskedQuestionsSliceDefaultPrimaryQuestionsItem>
+  >
+}
+
+/**
+ * Default variation for FrequentlyAskedQuestions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentlyAskedQuestionsSliceDefault = prismic.SharedSliceVariation<
+  'default',
+  Simplify<FrequentlyAskedQuestionsSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *FrequentlyAskedQuestions*
+ */
+type FrequentlyAskedQuestionsSliceVariation =
+  FrequentlyAskedQuestionsSliceDefault
+
+/**
+ * FrequentlyAskedQuestions Shared Slice
+ *
+ * - **API ID**: `frequently_asked_questions`
+ * - **Description**: FrequentlyAskedQuestions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentlyAskedQuestionsSlice = prismic.SharedSlice<
+  'frequently_asked_questions',
+  FrequentlyAskedQuestionsSliceVariation
 >
 
 /**
@@ -2657,6 +2744,11 @@ declare module '@prismicio/client' {
       FooterLogoSliceDefaultPrimary,
       FooterLogoSliceVariation,
       FooterLogoSliceDefault,
+      FrequentlyAskedQuestionsSlice,
+      FrequentlyAskedQuestionsSliceDefaultPrimaryQuestionsItem,
+      FrequentlyAskedQuestionsSliceDefaultPrimary,
+      FrequentlyAskedQuestionsSliceVariation,
+      FrequentlyAskedQuestionsSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryButtonsItem,
       HeroSliceDefaultPrimary,

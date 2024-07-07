@@ -8,6 +8,9 @@ export const components = {
   featuring: dynamic(() => import('./Featuring')),
   footer_element: dynamic(() => import('./FooterElement')),
   footer_logo: dynamic(() => import('./FooterLogo')),
+  frequently_asked_questions: dynamic(
+    () => import('./FrequentlyAskedQuestions'),
+  ),
   hero: dynamic(() => import('./Hero')),
   image_with_text: dynamic(() => import('./ImageWithText')),
   link_list: dynamic(() => import('./LinkList')),

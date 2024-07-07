@@ -6,6 +6,7 @@ import { createClient, repositoryName } from '@/prismicio'
 import Header from '@/components/layout/Header/Header'
 import Footer from '@/components/layout/Footer/Footer'
 import { cn } from '@/lib/utils'
+import SkipNav from '@/components/layout/SkipNav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,11 +33,12 @@ export default function RootLayout({
       <body
         className={cn(
           'flex min-h-screen flex-col justify-between bg-background font-sans antialiased',
-          inter.className
+          inter.className,
         )}
       >
+        <SkipNav />
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <PrismicPreview repositoryName={repositoryName} />
       </body>

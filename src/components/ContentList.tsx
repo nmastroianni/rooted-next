@@ -61,7 +61,7 @@ const ContentList = async ({
               >
                 <Link
                   href={item.url || '#'}
-                  className="flex flex-col justify-between border-t border-t-secondary py-10 md:items-start"
+                  className="flex flex-col justify-between border-t border-t-secondary py-10 lg:items-start"
                   aria-label={
                     asText(
                       item.type === 'service'
@@ -72,7 +72,7 @@ const ContentList = async ({
                 >
                   <div
                     className={
-                      'flex w-full flex-col justify-between md:flex-row md:items-center'
+                      'flex w-full flex-col justify-between lg:flex-row lg:items-center'
                     }
                   >
                     <div className="flex flex-col gap-y-3">
@@ -83,7 +83,7 @@ const ContentList = async ({
                             : item.data.full_name
                         }
                       />
-                      <div className="mb-6 flex gap-3">
+                      <div className="mb-6 flex justify-center gap-3 lg:justify-start">
                         {item.tags.length > 0 &&
                           item.tags.map(tag => (
                             <span
