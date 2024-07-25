@@ -57,19 +57,19 @@ const ContentList = async ({
 
   return (
     <>
-      <ul>
+      <ul className="grid gap-y-4">
         {results.length > 0 &&
           results.map((item, i) => {
             return (
               <li
                 key={item.id}
-                className={cn('rounded-lg p-4 lg:p-8', {
-                  'bg-secondary shadow': i % 2 === 0,
+                className={cn('rounded-lg p-4 shadow', {
+                  'bg-secondary': i % 2 === 0,
                 })}
               >
                 <Link
                   href={item.url || '#'}
-                  className="flex flex-col justify-between border-t border-t-secondary py-10 lg:items-start"
+                  className="flex flex-col justify-between lg:items-start"
                   aria-label={
                     asText(
                       item.type === 'service' || item.type === 'post'
@@ -150,7 +150,7 @@ const ContentList = async ({
                       }
                       imgixParams={{ ar: '1:1', fit: 'crop' }}
                       quality={75}
-                      width={300}
+                      width={200}
                       className="hidden rounded-lg shadow lg:inline"
                     />
                   </div>
