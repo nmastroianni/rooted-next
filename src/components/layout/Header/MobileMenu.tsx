@@ -24,6 +24,7 @@ import {
 } from '../../../../prismicio-types'
 import { PrismicNextLink } from '@prismicio/next'
 import Link from 'next/link'
+import { JSX } from 'react'
 
 type MobileMenuProps = {
   className?: string

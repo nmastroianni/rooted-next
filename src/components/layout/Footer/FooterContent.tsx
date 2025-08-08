@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { JSX } from 'react'
 import { LayoutDocumentData } from '../../../../prismicio-types'
 import Section from '../Section'
 import { SliceZone } from '@prismicio/react'

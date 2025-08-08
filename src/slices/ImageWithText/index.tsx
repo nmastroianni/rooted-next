@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { Content, isFilled } from '@prismicio/client'
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 import { SliceComponentProps } from '@prismicio/react'
+import { JSX } from 'react'
 
 /**
  * Props for `ImageWithText`.

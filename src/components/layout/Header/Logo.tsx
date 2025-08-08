@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils'
 import { ImageField, KeyTextField, isFilled } from '@prismicio/client'
 import { PrismicNextImage } from '@prismicio/next'
 import Link from 'next/link'
+import { JSX } from 'react'
 type PhoneTitleProps = {
   site_title: KeyTextField
   logo?: ImageField

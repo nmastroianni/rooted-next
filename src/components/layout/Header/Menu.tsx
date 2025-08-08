@@ -17,6 +17,7 @@ import {
   SubMenuDocument,
 } from '../../../../prismicio-types'
 import { buttonVariants } from '@/components/ui/button'
+import { JSX } from 'react'
 
 type MenuProps = {
   data: LayoutDocumentData

@@ -12,36 +12,24 @@ import {
 } from '@/lib/utils'
 import PageBreadcrumbs from '@/components/layout/PageBreadcrumbs'
 import Heading from '@/components/typography/Heading'
-import { Graph, ListItem } from 'schema-dts'
+import { Graph } from 'schema-dts'
 
 type Params = { uid: string }
 type SearchParams = {
   [key: string]: string | string[] | undefined
 }
 
-export default async function Page({
-  params,
-  searchParams,
-}: {
-  params: Params
-  searchParams: SearchParams
+export default async function Page(props: {
+  params: Promise<Params>
+  searchParams: Promise<SearchParams>
 }) {
+  const params = await props.params
+  const searchParams = await props.searchParams
   const client = createClient()
   const page = await client.getByUID('page', params.uid).catch(() => notFound())
   const pageNumber = { page: searchParams.page }
   const urlSegments = getUrlSegments(page.url)
   const settings = await client.getSingle('settings')
-  const jsonBreadcrumbs = urlSegments.map((item, i) => {
-    const crumb: ListItem = {
-      '@type': 'ListItem',
-      position: i + 1,
-      item: {
-        '@id': `https://${settings.data.domain || `example.com`}${page.url}`,
-        name: item,
-      },
-    }
-    return crumb
-  })
   const jsonLd: Graph = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -99,11 +87,10 @@ export default async function Page({
   )
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params
+export async function generateMetadata(props: {
+  params: Promise<Params>
 }): Promise<Metadata> {
+  const params = await props.params
   const client = createClient()
   const page = await client.getByUID('page', params.uid).catch(() => notFound())
   const settings = await client.getSingle('settings')

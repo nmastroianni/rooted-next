@@ -23,10 +23,12 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { Graph, Offer, Thing } from 'schema-dts'
+import { ReactNode } from 'react'
 
 type Params = { uid: string }
 
-export default async function Page({ params }: { params: Params }) {
+export default async function Page( props: { params: Promise<Params> }) {
+  const params = await props.params
   const client = createClient()
   const page = await client
     .getByUID('clinician', params.uid, { fetchLinks: ['service.title'] })
@@ -112,7 +114,7 @@ export default async function Page({ params }: { params: Params }) {
         <PrismicRichText
           field={page.data.full_name}
           components={{
-            heading1: ({ children }) => (
+            heading1: ({ children }: {children: ReactNode}) => (
               <Heading as="h1" size="5xl" className="my-8 lg:text-center">
                 {children}
               </Heading>
@@ -268,11 +270,10 @@ export default async function Page({ params }: { params: Params }) {
   )
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params
+export async function generateMetadata(props: {
+  params: Promise<Params>
 }): Promise<Metadata> {
+  const params = await props.params
   const client = createClient()
   const page = await client
     .getByUID('clinician', params.uid)

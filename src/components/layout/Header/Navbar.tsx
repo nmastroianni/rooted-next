@@ -1,7 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
 import { motion, useMotionValueEvent, useScroll } from 'motion/react'
-import { useRef, useState } from 'react'
+import { JSX, useRef, useState } from 'react'
 import {
   SettingsDocumentData,
   LayoutDocumentData,

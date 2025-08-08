@@ -5,6 +5,7 @@ import { PrismicNextLink } from '@prismicio/next'
 import { SliceComponentProps } from '@prismicio/react'
 import { Button } from '@/components/ui/button'
 import { HiArrowRight } from 'react-icons/hi'
+import { JSX } from 'react'
 
 /**
  * Props for `SubMenuItem`.

@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { Content, isFilled } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
 import { SliceComponentProps } from '@prismicio/react'
+import { JSX } from 'react'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { FaCalendarCheck, FaComment, FaWpforms } from 'react-icons/fa6'
 

@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { PrismicRichText } from '@/components/typography/PrismicRichText'
+import { JSX } from 'react'
 
 /**
  * Props for `FrequentlyAskedQuestions`.

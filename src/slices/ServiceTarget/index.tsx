@@ -7,6 +7,7 @@ import { asText, Content, isFilled } from '@prismicio/client'
 import { PrismicNextImage } from '@prismicio/next'
 import { SliceComponentProps } from '@prismicio/react'
 import { Ultra } from 'next/font/google'
+import { JSX } from 'react'
 
 /**
  * Props for `ServiceTarget`.

@@ -8,6 +8,7 @@ import { HiArrowRight } from 'react-icons/hi'
 import { PrismicRichText } from './typography/PrismicRichText'
 import { badgeVariants } from './ui/badge'
 import { buttonVariants } from './ui/button'
+import { JSX } from 'react'
 type ContentListProps = {
   contentType: SelectField
   page: number | undefined
