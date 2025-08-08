@@ -69,11 +69,11 @@ export default async function Page({
           fill
           className={'-z-10 object-cover'}
         />
-        <div className="my-12 max-w-2xl rounded-lg bg-background/80 px-12 py-36 backdrop-blur">
+        <div className="my-12 max-w-2xl rounded-lg bg-background/80 px-12 py-36 backdrop-blur-sm">
           <Heading
             as="h1"
             size="6xl"
-            className="z-10 mx-auto my-8 max-w-screen-lg px-2 md:px-6 lg:my-12 lg:text-center"
+            className="z-10 mx-auto my-8 max-w-(--breakpoint-lg) px-2 md:px-6 lg:my-12 lg:text-center"
           >
             {asText(page.data.title)}
           </Heading>

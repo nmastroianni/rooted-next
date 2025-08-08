@@ -26,7 +26,7 @@ type MenuProps = {
 const Menu = ({ data, className }: MenuProps): JSX.Element => {
   const { slices } = data
   return (
-    <div className={cn('flex flex-grow text-primary-foreground', className)}>
+    <div className={cn('flex grow text-primary-foreground', className)}>
       <NavigationMenu className="max-w-full">
         <NavigationMenuList>
           {slices.map((slice) => {

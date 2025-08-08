@@ -35,7 +35,7 @@ const ImageWithText = ({ slice }: ImageWithTextProps): JSX.Element => {
         >
           <PrismicNextImage
             field={slice.primary.image}
-            className="rounded-lg shadow"
+            className="rounded-lg shadow-sm"
             quality={85}
           />
         </div>

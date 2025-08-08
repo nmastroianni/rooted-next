@@ -91,7 +91,7 @@ const MobileMenu = ({
                     >
                       <AccordionTrigger
                         className={cn(
-                          'flex justify-center rounded-lg border text-primary [&[data-state=open]]:mb-4',
+                          'flex justify-center rounded-lg border text-primary data-[state=open]:mb-4',
                           buttonVariants({ variant: 'link' }),
                         )}
                       >

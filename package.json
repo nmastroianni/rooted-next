@@ -35,20 +35,20 @@
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.43",
     "@tailwindcss/aspect-ratio": "latest",
+    "@tailwindcss/postcss": "^4.1.11",
     "@tailwindcss/typography": "latest",
     "@types/node": "^20.14.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "autoprefixer": "^10.4.19",
     "concurrently": "latest",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.3",
     "postcss": "^8.4.39",
     "prettier": "latest",
-    "prettier-plugin-tailwindcss": "latest",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "schema-dts": "latest",
     "slice-machine-ui": "^2.3.0",
-    "tailwindcss": "^3.4.6",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.5.4"
   }
 }

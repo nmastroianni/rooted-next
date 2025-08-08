@@ -32,7 +32,7 @@ const Process = ({ slice }: ProcessProps): JSX.Element => {
       width="xl"
       className={cn('py-8 lg:pb-24', {})}
     >
-      <div className="mx-auto my-8 flex max-w-screen-2xl flex-col items-center justify-center">
+      <div className="mx-auto my-8 flex max-w-(--breakpoint-2xl) flex-col items-center justify-center">
         {isFilled.keyText(slice.primary.title) && (
           <p className="text-sm font-medium uppercase">{slice.primary.title}</p>
         )}

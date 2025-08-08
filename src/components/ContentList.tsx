@@ -63,7 +63,7 @@ const ContentList = async ({
             return (
               <li
                 key={item.id}
-                className={cn('rounded-lg p-4 shadow', {
+                className={cn('rounded-lg p-4 shadow-sm', {
                   'bg-secondary': i % 2 === 0,
                 })}
               >
@@ -151,7 +151,7 @@ const ContentList = async ({
                       imgixParams={{ ar: '1:1', fit: 'crop' }}
                       quality={75}
                       width={200}
-                      className="hidden rounded-lg shadow lg:inline"
+                      className="hidden rounded-lg shadow-sm lg:inline"
                     />
                   </div>
                 </Link>

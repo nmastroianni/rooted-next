@@ -143,7 +143,7 @@ export default async function Page({ params }: { params: Params }) {
           </div>
         </div>
         <Section as="div" width="xl">
-          <div className="mx-auto max-w-screen-lg rounded-lg bg-background p-4 pt-8">
+          <div className="mx-auto max-w-(--breakpoint-lg) rounded-lg bg-background p-4 pt-8">
             <div className="prose mx-auto mt-6 grid place-content-center gap-4 lg:prose-lg xl:prose-xl prose-ul:pl-0 prose-li:my-0 lg:mt-8 lg:grid-cols-5 lg:gap-8">
               <Heading as="h2" size="3xl" className="mb-0 lg:col-span-2">
                 {page.data.first_name} focuses on:
@@ -167,7 +167,7 @@ export default async function Page({ params }: { params: Params }) {
                 Approaches:
               </Heading>
               {isFilled.group(page.data.approaches) && (
-                <ul className="flex flex-grow list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
+                <ul className="flex grow list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
                   {page.data.approaches.map((approach, i) => {
                     return (
                       <li
@@ -189,7 +189,7 @@ export default async function Page({ params }: { params: Params }) {
                 Delivery:
               </Heading>
               {isFilled.select(page.data.service_delivery) && (
-                <ul className="flex flex-grow list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
+                <ul className="flex grow list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
                   <li>
                     <TooltipProvider>
                       <Tooltip>
