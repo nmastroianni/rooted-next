@@ -42,7 +42,7 @@ const Pagination: FC<PaginationProps> = ({
         </Button>
       </div>
       {totalPages && (
-        <div className="my-6 flex justify-center ">
+        <div className="my-6 flex justify-center">
           Page {pageNumber} of {totalPages}
         </div>
       )}

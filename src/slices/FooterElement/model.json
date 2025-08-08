@@ -17,9 +17,7 @@
           "config": {
             "label": "Layout",
             "select": "document",
-            "customtypes": [
-              "footer"
-            ]
+            "customtypes": ["footer"]
           }
         }
       },

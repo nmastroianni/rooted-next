@@ -29,7 +29,7 @@ const Featuring = ({ slice }: FeaturingProps): JSX.Element => {
       className="py-6 lg:py-12"
     >
       {headPresent && (
-        <div className="prose mx-auto lg:prose-lg xl:prose-xl">
+        <div className="prose lg:prose-lg xl:prose-xl mx-auto">
           {isFilled.richText(slice.primary.heading) && (
             <PrismicRichText field={slice.primary.heading} />
           )}
@@ -43,7 +43,10 @@ const Featuring = ({ slice }: FeaturingProps): JSX.Element => {
           <>
             {slice.primary.features.map((feature, i) => {
               return (
-                <Card key={slice.id + i} className="min-w-[350px] max-w-md">
+                <Card
+                  key={slice.id + i}
+                  className="max-w-md min-w-[350px] py-0 pb-6"
+                >
                   {slice.variation === 'default' && (
                     <CardHeader className="relative min-h-48 overflow-hidden">
                       {'image' in feature && (

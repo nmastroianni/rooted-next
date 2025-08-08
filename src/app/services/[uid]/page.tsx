@@ -65,11 +65,11 @@ export default async function Page(props: { params: Promise<Params> }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Section width="xl">
+      <Section width="xl" as="div">
         <PrismicRichText
           field={page.data.title}
           components={{
-            heading1: ({ children }: {children: ReactNode}) => (
+            heading1: ({ children }: { children: ReactNode }) => (
               <Heading as="h1" size="5xl" className="my-8 lg:text-center">
                 {children}
               </Heading>

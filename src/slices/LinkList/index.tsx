@@ -26,7 +26,7 @@ const LinkList = ({ slice, index }: LinkListProps): JSX.Element => {
         field={slice.primary.heading}
         components={{
           heading2: ({ children }) => (
-            <Heading as="h2" size="3xl" className="pb-4 text-background">
+            <Heading as="h2" size="3xl" className="text-background pb-4">
               {children}
             </Heading>
           ),

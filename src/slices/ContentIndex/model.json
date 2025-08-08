@@ -17,11 +17,7 @@
           "config": {
             "label": "Content Type",
             "placeholder": "",
-            "options": [
-              "clinician",
-              "service",
-              "post"
-            ]
+            "options": ["clinician", "service", "post"]
           }
         },
         "content_cta_text": {

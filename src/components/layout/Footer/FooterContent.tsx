@@ -15,7 +15,7 @@ const FooterContent = ({ data }: FooterContentProps): JSX.Element => {
   return (
     <Section
       as="footer"
-      className="mt-auto bg-linear-to-b from-primary via-slate-900 to-slate-950 text-background"
+      className="from-primary text-background mt-auto bg-linear-to-b via-slate-900 to-slate-950"
     >
       {isFilled.keyText(data.footer_cta) && (
         <FooterCTA

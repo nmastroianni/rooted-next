@@ -1,5 +1,5 @@
+import { clsx, type ClassValue } from 'clsx'
 import { createClient } from '@/prismicio'
-import { type ClassValue, clsx } from 'clsx'
 import { ListItem, Organization } from 'schema-dts'
 import { twMerge } from 'tailwind-merge'
 import {
@@ -8,11 +8,9 @@ import {
   ServiceDocument,
 } from '../../prismicio-types'
 import { KeyTextField } from '@prismicio/client'
-
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-
 export function getUrlSegments(url: string | null): string[] {
   // Check if the URL parameter is null
   if (url === null) {

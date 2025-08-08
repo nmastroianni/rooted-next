@@ -48,12 +48,7 @@
                 "config": {
                   "label": "Icon",
                   "placeholder": "",
-                  "options": [
-                    "form",
-                    "call",
-                    "calendar",
-                    "comment"
-                  ]
+                  "options": ["form", "call", "calendar", "comment"]
                 }
               },
               "step_title": {

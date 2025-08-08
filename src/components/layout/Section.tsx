@@ -24,7 +24,7 @@ export default function Section({
         {
           'px-4 py-2 md:px-6 md:py-4 lg:py-6': padded,
         },
-        className
+        className,
       )}
       {...restProps}
     >

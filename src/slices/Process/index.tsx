@@ -59,7 +59,7 @@ const Process = ({ slice }: ProcessProps): JSX.Element => {
               field={slice.primary.description}
               components={{
                 paragraph: ({ children }) => (
-                  <p className="prose mb-8 lg:prose-lg">{children}</p>
+                  <p className="prose lg:prose-lg mb-8">{children}</p>
                 ),
               }}
             />
@@ -80,9 +80,9 @@ const Process = ({ slice }: ProcessProps): JSX.Element => {
                   >
                     <CardHeader className="min-h-36">
                       {Icon ? (
-                        <Icon className="inline-flex h-24 w-24 self-center text-primary" />
+                        <Icon className="text-primary inline-flex h-24 w-24 self-center" />
                       ) : (
-                        <p className="text-center text-[6rem] font-black text-primary">
+                        <p className="text-primary text-center text-[6rem] font-black">
                           {index + 1}
                         </p>
                       )}
@@ -96,7 +96,7 @@ const Process = ({ slice }: ProcessProps): JSX.Element => {
                           field={item.description}
                           components={{
                             paragraph: ({ children }) => (
-                              <p className="prose mb-8 dark:prose-invert">
+                              <p className="prose dark:prose-invert mb-8">
                                 {children}
                               </p>
                             ),

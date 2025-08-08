@@ -19,9 +19,10 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>
 const Hero = ({ slice, index }: HeroProps): JSX.Element => {
   return (
     <Section
+      as="div"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={cn('relative text-primary-foreground', {
+      className={cn('text-primary-foreground relative', {
         'bg-primary': slice.variation === 'default',
         'lg:h-[calc(100vh-108px)] lg:min-h-[750px]':
           slice.variation !== 'contentHeight',
@@ -68,7 +69,7 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
             field={slice.primary.sub_heading}
             components={{
               paragraph: ({ children }) => (
-                <p className="mt-6 text-center text-2xl text-foreground lg:text-3xl">
+                <p className="text-foreground mt-6 text-center text-2xl lg:text-3xl">
                   {children}
                 </p>
               ),
@@ -86,7 +87,7 @@ const Hero = ({ slice, index }: HeroProps): JSX.Element => {
                   variant={button.button_style || 'default'}
                   size="lg"
                   className={cn('mt-4 lg:mt-8', {
-                    'border-2 border-background bg-primary':
+                    'border-background bg-primary border-2':
                       button.button_style === 'outline',
                     'text-primary':
                       button.button_style === 'link' ||

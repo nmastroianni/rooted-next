@@ -7,6 +7,6 @@ const nextConfig = {
       { protocol: 'https', hostname: 'prismic-io.s3.amazonaws.com' },
     ],
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

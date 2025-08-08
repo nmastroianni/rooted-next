@@ -135,7 +135,7 @@ const ContentList = async ({
                     )}
                   >
                     {item.type === 'post' || item.data.meta_description ? (
-                      <div className="prose my-4 shrink lg:prose-lg">
+                      <div className="prose lg:prose-lg my-4 shrink">
                         {item.type === 'post'
                           ? item.data.excerpt
                           : item.data.meta_description}

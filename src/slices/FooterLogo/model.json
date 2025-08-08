@@ -46,10 +46,7 @@
                 "config": {
                   "label": "Icon",
                   "placeholder": "",
-                  "options": [
-                    "envelope",
-                    "telephone"
-                  ]
+                  "options": ["envelope", "telephone"]
                 }
               }
             }

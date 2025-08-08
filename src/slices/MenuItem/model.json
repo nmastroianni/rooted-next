@@ -50,9 +50,7 @@
           "config": {
             "label": "Sub Menu",
             "select": "document",
-            "customtypes": [
-              "sub_menu"
-            ]
+            "customtypes": ["sub_menu"]
           }
         }
       },

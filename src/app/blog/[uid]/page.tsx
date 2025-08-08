@@ -68,7 +68,7 @@ export default async function Page(props: {
           fill
           className={'-z-10 object-cover'}
         />
-        <div className="my-12 max-w-2xl rounded-lg bg-background/80 px-12 py-36 backdrop-blur-sm">
+        <div className="bg-background/80 my-12 max-w-2xl rounded-lg px-12 py-36 backdrop-blur-sm">
           <Heading
             as="h1"
             size="6xl"
@@ -87,8 +87,7 @@ export default async function Page(props: {
   )
 }
 
-export async function generateMetadata(props
-: {
+export async function generateMetadata(props: {
   params: Promise<Params>
 }): Promise<Metadata> {
   const params = await props.params

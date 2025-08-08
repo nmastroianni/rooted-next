@@ -22,42 +22,42 @@ type RichTextSpanProps = {
 }
 
 const defaultComponents: JSXMapSerializer = {
-  heading1: ({ children }: {children: ReactNode}) => {
+  heading1: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h1" size="6xl">
         {children}
       </Heading>
     )
   },
-  heading2: ({ children }: {children: ReactNode}) => {
+  heading2: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h2" size="5xl">
         {children}
       </Heading>
     )
   },
-  heading3: ({ children }: {children: ReactNode}) => {
+  heading3: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h3" size="4xl">
         {children}
       </Heading>
     )
   },
-  heading4: ({ children }: {children: ReactNode}) => {
+  heading4: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h4" size="3xl">
         {children}
       </Heading>
     )
   },
-  heading5: ({ children }: {children: ReactNode}) => {
+  heading5: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h5" size="2xl">
         {children}
       </Heading>
     )
   },
-  heading6: ({ children }: {children: ReactNode}) => {
+  heading6: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h6" size="xl">
         {children}
@@ -71,7 +71,7 @@ const defaultComponents: JSXMapSerializer = {
     return (
       <p
         className={cn(
-          'prose mx-auto my-3 text-foreground lg:prose-lg xl:prose-xl lg:my-6',
+          'prose text-foreground lg:prose-lg xl:prose-xl mx-auto my-3 lg:my-6',
           {
             grid: labels.length > 0 && labels[0].data.label === 'button',
           },
@@ -107,7 +107,7 @@ const defaultComponents: JSXMapSerializer = {
   },
   list: ({ children }) => {
     return (
-      <ul className="prose mx-auto list-disc lg:prose-lg xl:prose-xl">
+      <ul className="prose lg:prose-lg xl:prose-xl mx-auto list-disc">
         {children}
       </ul>
     )

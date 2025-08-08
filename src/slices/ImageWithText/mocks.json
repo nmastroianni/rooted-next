@@ -1,280 +1,280 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"image": {
-				"url": "https://images.unsplash.com/photo-1573495804664-b1c0849525af?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8cGVvcGxlJTIwdGFsa2luZ3xlbnwwfHx8fDE3MjAyMTAzOTB8MA&ixlib=rb-4.0.3&q=85",
-				"alt": "shallow focus photo of woman in beige open cardigan",
-				"origin": {
-					"id": "rCyiK4_aaWw",
-					"url": "https://images.unsplash.com/photo-1573495804664-b1c0849525af?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8cGVvcGxlJTIwdGFsa2luZ3xlbnwwfHx8fDE3MjAyMTAzOTB8MA&ixlib=rb-4.0.3&q=85",
-					"width": 6016,
-					"height": 4016
-				},
-				"width": 6016,
-				"height": 4016,
-				"edit": {
-					"background": "transparent",
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					}
-				},
-				"credits": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Image With Text Slice",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"right_list": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Aliqua incididunt Lorem magna cupidatat Lorem eiusmod laborum et minim proident mollit."
-						}
-					}
-				]
-			},
-			"buttons": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Button 1"
-								}
-							],
-							[
-								"button_link",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://prismic.io"
-									}
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "default",
-									"type": "Select"
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Button 2"
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "secondary"
-								}
-							]
-						]
-					}
-				]
-			},
-			"left_list": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Sunt voluptate non occaecat cupidatat voluptate mollit dolore et proident mollit. Enim culpa duis ea culpa dolor minim velit do occaecat magna."
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Commodo ea velit exercitation quis. Sint culpa enim labore aliquip nulla labore ullamco. Esse eu laboris labore nulla irure dolore aliquip Lorem.",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Commodo ea velit exercitation quis. Sint culpa enim labore aliquip nulla labore ullamco. Esse eu laboris labore nulla irure dolore aliquip Lorem.",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"background": {
-				"__TYPE__": "BooleanContent",
-				"value": false
-			}
-		},
-		"items": []
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "rightImage",
-		"primary": {
-			"image": {
-				"url": "https://images.unsplash.com/photo-1573495804664-b1c0849525af?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8cGVvcGxlJTIwdGFsa2luZ3xlbnwwfHx8fDE3MjAyMTAzOTB8MA&ixlib=rb-4.0.3&q=85",
-				"alt": "shallow focus photo of woman in beige open cardigan",
-				"origin": {
-					"id": "rCyiK4_aaWw",
-					"url": "https://images.unsplash.com/photo-1573495804664-b1c0849525af?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8cGVvcGxlJTIwdGFsa2luZ3xlbnwwfHx8fDE3MjAyMTAzOTB8MA&ixlib=rb-4.0.3&q=85",
-					"width": 6016,
-					"height": 4016
-				},
-				"width": 6016,
-				"height": 4016,
-				"edit": {
-					"background": "transparent",
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					}
-				},
-				"credits": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Right Image Variation",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Et et mollit voluptate aliquip et exercitation incididunt reprehenderit amet proident pariatur irure consequat ad. Lorem sunt ad elit culpa laborum occaecat officia duis. Duis eu Lorem mollit consequat.",
-							"spans": []
-						},
-						"direction": "ltr"
-					},
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Et et mollit voluptate aliquip et exercitation incididunt reprehenderit amet proident pariatur irure consequat ad. Lorem sunt ad elit culpa laborum occaecat officia duis. Duis eu Lorem mollit consequat.",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"right_list": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Cupidatat dolore excepteur Lorem laboris. Reprehenderit laboris sint in ex sunt tempor cillum quis mollit anim exercitation laborum voluptate nostrud. Elit adipisicing consectetur excepteur tempor do."
-						}
-					}
-				]
-			},
-			"buttons": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Button"
-								}
-							],
-							[
-								"button_link",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "http://twitter.com"
-									}
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "default"
-								}
-							]
-						]
-					}
-				]
-			},
-			"left_list": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Eiusmod labore culpa labore occaecat."
-						}
-					}
-				]
-			},
-			"background": {
-				"__TYPE__": "BooleanContent",
-				"value": true
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "image": {
+        "url": "https://images.unsplash.com/photo-1573495804664-b1c0849525af?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8cGVvcGxlJTIwdGFsa2luZ3xlbnwwfHx8fDE3MjAyMTAzOTB8MA&ixlib=rb-4.0.3&q=85",
+        "alt": "shallow focus photo of woman in beige open cardigan",
+        "origin": {
+          "id": "rCyiK4_aaWw",
+          "url": "https://images.unsplash.com/photo-1573495804664-b1c0849525af?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8cGVvcGxlJTIwdGFsa2luZ3xlbnwwfHx8fDE3MjAyMTAzOTB8MA&ixlib=rb-4.0.3&q=85",
+          "width": 6016,
+          "height": 4016
+        },
+        "width": 6016,
+        "height": 4016,
+        "edit": {
+          "background": "transparent",
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "credits": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      },
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Image With Text Slice",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      },
+      "right_list": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Aliqua incididunt Lorem magna cupidatat Lorem eiusmod laborum et minim proident mollit."
+            }
+          }
+        ]
+      },
+      "buttons": {
+        "__TYPE__": "GroupContentType",
+        "value": [
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Button 1"
+                }
+              ],
+              [
+                "button_link",
+                {
+                  "__TYPE__": "LinkContent",
+                  "value": {
+                    "__TYPE__": "ExternalLink",
+                    "url": "https://prismic.io"
+                  }
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "value": "default",
+                  "type": "Select"
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Button 2"
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Select",
+                  "value": "secondary"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "left_list": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sunt voluptate non occaecat cupidatat voluptate mollit dolore et proident mollit. Enim culpa duis ea culpa dolor minim velit do occaecat magna."
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Commodo ea velit exercitation quis. Sint culpa enim labore aliquip nulla labore ullamco. Esse eu laboris labore nulla irure dolore aliquip Lorem.",
+              "spans": []
+            },
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Commodo ea velit exercitation quis. Sint culpa enim labore aliquip nulla labore ullamco. Esse eu laboris labore nulla irure dolore aliquip Lorem.",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      },
+      "background": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      }
+    },
+    "items": []
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "rightImage",
+    "primary": {
+      "image": {
+        "url": "https://images.unsplash.com/photo-1573495804664-b1c0849525af?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8cGVvcGxlJTIwdGFsa2luZ3xlbnwwfHx8fDE3MjAyMTAzOTB8MA&ixlib=rb-4.0.3&q=85",
+        "alt": "shallow focus photo of woman in beige open cardigan",
+        "origin": {
+          "id": "rCyiK4_aaWw",
+          "url": "https://images.unsplash.com/photo-1573495804664-b1c0849525af?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwyNXx8cGVvcGxlJTIwdGFsa2luZ3xlbnwwfHx8fDE3MjAyMTAzOTB8MA&ixlib=rb-4.0.3&q=85",
+          "width": 6016,
+          "height": 4016
+        },
+        "width": 6016,
+        "height": 4016,
+        "edit": {
+          "background": "transparent",
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "credits": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      },
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Right Image Variation",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Et et mollit voluptate aliquip et exercitation incididunt reprehenderit amet proident pariatur irure consequat ad. Lorem sunt ad elit culpa laborum occaecat officia duis. Duis eu Lorem mollit consequat.",
+              "spans": []
+            },
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Et et mollit voluptate aliquip et exercitation incididunt reprehenderit amet proident pariatur irure consequat ad. Lorem sunt ad elit culpa laborum occaecat officia duis. Duis eu Lorem mollit consequat.",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      },
+      "right_list": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Cupidatat dolore excepteur Lorem laboris. Reprehenderit laboris sint in ex sunt tempor cillum quis mollit anim exercitation laborum voluptate nostrud. Elit adipisicing consectetur excepteur tempor do."
+            }
+          }
+        ]
+      },
+      "buttons": {
+        "__TYPE__": "GroupContentType",
+        "value": [
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Button"
+                }
+              ],
+              [
+                "button_link",
+                {
+                  "__TYPE__": "LinkContent",
+                  "value": {
+                    "__TYPE__": "ExternalLink",
+                    "url": "http://twitter.com"
+                  }
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Select",
+                  "value": "default"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "left_list": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Eiusmod labore culpa labore occaecat."
+            }
+          }
+        ]
+      },
+      "background": {
+        "__TYPE__": "BooleanContent",
+        "value": true
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
 ]

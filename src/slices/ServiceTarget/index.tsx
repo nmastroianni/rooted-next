@@ -29,7 +29,7 @@ const ServiceTarget = ({ slice }: ServiceTargetProps): JSX.Element => {
           {slice.primary.targets.map((target, i) => {
             return (
               <li key={slice.id + asText(target.target_title) + i}>
-                <Card className="max-w-lg">
+                <Card className="max-w-lg py-0 pb-6">
                   <CardHeader className="relative flex min-h-40 flex-col justify-center">
                     <PrismicNextImage
                       field={target.target_image}
