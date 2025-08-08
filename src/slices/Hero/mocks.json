@@ -1,366 +1,366 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Rooted Psychotherapy & Counseling",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"buttons": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_link",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://prismic.io"
-									}
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "outline"
-								}
-							],
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Button 1"
-								}
-							]
-						]
-					}
-				]
-			},
-			"sub_heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Quality Care You Can Count On",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			}
-		},
-		"items": []
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "contentHeight",
-		"primary": {
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Fellow"
-						}
-					}
-				]
-			},
-			"buttons": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_link",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "http://twitter.com"
-									}
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "destructive",
-									"type": "Select"
-								}
-							],
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"value": "have",
-									"type": "Text"
-								}
-							]
-						]
-					}
-				]
-			},
-			"image": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
-					"width": 4160,
-					"height": 3120
-				},
-				"url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
-				"width": 4160,
-				"height": 3120,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"sub_heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Minim ut irure nostrud ut qui quis irure est. Fugiat proident ut voluptate elit. Proident elit voluptate tempor magna elit consectetur aliquip."
-						}
-					}
-				]
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "withImage",
-		"primary": {
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Rooted Psychotherapy & Counseling",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
-			"buttons": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_link",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://prismic.io"
-									}
-								}
-							],
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Default"
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "default"
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Secondary"
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "secondary"
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Destructive"
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "destructive"
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Outline"
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "outline"
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Ghost"
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "ghost"
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"button_label",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Text",
-									"value": "Link"
-								}
-							],
-							[
-								"button_style",
-								{
-									"__TYPE__": "FieldContent",
-									"type": "Select",
-									"value": "link"
-								}
-							]
-						]
-					}
-				]
-			},
-			"image": {
-				"url": "https://images.unsplash.com/photo-1601979142879-ad5896cb0617?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxyb290c3xlbnwwfHx8fDE3MTc0NTk2ODF8MA&ixlib=rb-4.0.3&q=85",
-				"alt": "brown tree trunk with green moss",
-				"origin": {
-					"id": "MskbR8VLNrA",
-					"url": "https://images.unsplash.com/photo-1601979142879-ad5896cb0617?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxyb290c3xlbnwwfHx8fDE3MTc0NTk2ODF8MA&ixlib=rb-4.0.3&q=85",
-					"width": 4912,
-					"height": 3264
-				},
-				"width": 4912,
-				"height": 3264,
-				"edit": {
-					"background": "transparent",
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					}
-				},
-				"credits": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
-			},
-			"sub_heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Quality Care You Can Count On",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Rooted Psychotherapy & Counseling",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      },
+      "buttons": {
+        "__TYPE__": "GroupContentType",
+        "value": [
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_link",
+                {
+                  "__TYPE__": "LinkContent",
+                  "value": {
+                    "__TYPE__": "ExternalLink",
+                    "url": "https://prismic.io"
+                  }
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Select",
+                  "value": "outline"
+                }
+              ],
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Button 1"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "sub_heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Quality Care You Can Count On",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      }
+    },
+    "items": []
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "contentHeight",
+    "primary": {
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Fellow"
+            }
+          }
+        ]
+      },
+      "buttons": {
+        "__TYPE__": "GroupContentType",
+        "value": [
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_link",
+                {
+                  "__TYPE__": "LinkContent",
+                  "value": {
+                    "__TYPE__": "ExternalLink",
+                    "url": "http://twitter.com"
+                  }
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "value": "destructive",
+                  "type": "Select"
+                }
+              ],
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "value": "have",
+                  "type": "Text"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "image": {
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
+          "width": 4160,
+          "height": 3120
+        },
+        "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
+        "width": 4160,
+        "height": 3120,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      },
+      "sub_heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Minim ut irure nostrud ut qui quis irure est. Fugiat proident ut voluptate elit. Proident elit voluptate tempor magna elit consectetur aliquip."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "withImage",
+    "primary": {
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Rooted Psychotherapy & Counseling",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      },
+      "buttons": {
+        "__TYPE__": "GroupContentType",
+        "value": [
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_link",
+                {
+                  "__TYPE__": "LinkContent",
+                  "value": {
+                    "__TYPE__": "ExternalLink",
+                    "url": "https://prismic.io"
+                  }
+                }
+              ],
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Default"
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Select",
+                  "value": "default"
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Secondary"
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Select",
+                  "value": "secondary"
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Destructive"
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Select",
+                  "value": "destructive"
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Outline"
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Select",
+                  "value": "outline"
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Ghost"
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Select",
+                  "value": "ghost"
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "button_label",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Text",
+                  "value": "Link"
+                }
+              ],
+              [
+                "button_style",
+                {
+                  "__TYPE__": "FieldContent",
+                  "type": "Select",
+                  "value": "link"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "image": {
+        "url": "https://images.unsplash.com/photo-1601979142879-ad5896cb0617?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxyb290c3xlbnwwfHx8fDE3MTc0NTk2ODF8MA&ixlib=rb-4.0.3&q=85",
+        "alt": "brown tree trunk with green moss",
+        "origin": {
+          "id": "MskbR8VLNrA",
+          "url": "https://images.unsplash.com/photo-1601979142879-ad5896cb0617?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxyb290c3xlbnwwfHx8fDE3MTc0NTk2ODF8MA&ixlib=rb-4.0.3&q=85",
+          "width": 4912,
+          "height": 3264
+        },
+        "width": 4912,
+        "height": 3264,
+        "edit": {
+          "background": "transparent",
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "credits": null,
+        "__TYPE__": "ImageContent",
+        "thumbnails": {}
+      },
+      "sub_heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Quality Care You Can Count On",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
 ]

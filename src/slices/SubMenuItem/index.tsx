@@ -5,6 +5,7 @@ import { PrismicNextLink } from '@prismicio/next'
 import { SliceComponentProps } from '@prismicio/react'
 import { Button } from '@/components/ui/button'
 import { HiArrowRight } from 'react-icons/hi'
+import { JSX } from 'react'
 
 /**
  * Props for `SubMenuItem`.
@@ -28,7 +29,7 @@ const SubMenuItem = ({ slice }: SubMenuItemProps): JSX.Element => {
           <PrismicNextLink field={slice.primary.link}>
             {slice.primary.label}
             {slice.variation === 'default' && (
-              <HiArrowRight className="w-4 h-4l ml-2" />
+              <HiArrowRight className="h-4l ml-2 w-4" />
             )}
           </PrismicNextLink>
         </Button>
@@ -37,10 +38,10 @@ const SubMenuItem = ({ slice }: SubMenuItemProps): JSX.Element => {
         <PrismicNextLink
           field={slice.primary.link}
           className={cn(
-            'grid gap-2 rounded-lg border px-4 py-2 transition duration-300 ease-in-out hover:bg-secondary'
+            'hover:bg-secondary grid gap-2 rounded-lg border px-4 py-2 transition duration-300 ease-in-out',
           )}
         >
-          <p className="text-sm font-medium text-primary">
+          <p className="text-primary text-sm font-medium">
             {slice.primary.label}
           </p>
           <p className="text-xs">{slice.primary.description}</p>

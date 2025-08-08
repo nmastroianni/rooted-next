@@ -24,6 +24,7 @@ import {
 } from '../../../../prismicio-types'
 import { PrismicNextLink } from '@prismicio/next'
 import Link from 'next/link'
+import { JSX } from 'react'
 
 type MobileMenuProps = {
   className?: string
@@ -48,13 +49,13 @@ const MobileMenu = ({
             buttonVariants({ variant: 'link' }),
           )}
         >
-          <HiMenu className="h-8 w-8 text-primary-foreground" />
+          <HiMenu className="text-primary-foreground size-8" />
           <span className="sr-only">Open Main Menu</span>
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
             {isFilled.keyText(site_title) && (
-              <SheetTitle className="font-bold text-primary">
+              <SheetTitle className="text-primary font-bold">
                 {site_title}
               </SheetTitle>
             )}
@@ -66,7 +67,7 @@ const MobileMenu = ({
           </SheetHeader>
           <SheetClose asChild className="my-2">
             <Button asChild variant={'default'} className="flex">
-              <Link href="/contact">Get In Touch</Link>
+              <Link href="tel:+1-856-375-2440">Get In Touch</Link>
             </Button>
           </SheetClose>
 
@@ -91,7 +92,7 @@ const MobileMenu = ({
                     >
                       <AccordionTrigger
                         className={cn(
-                          'flex justify-center rounded-lg border text-primary [&[data-state=open]]:mb-4',
+                          'text-primary flex justify-center rounded-lg border data-[state=open]:mb-4',
                           buttonVariants({ variant: 'link' }),
                         )}
                       >

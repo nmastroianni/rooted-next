@@ -1,6 +1,7 @@
 import Heading from '@/components/typography/Heading'
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
+import { JSX } from 'react'
 
 /**
  * Props for `SubMenuHeading`.

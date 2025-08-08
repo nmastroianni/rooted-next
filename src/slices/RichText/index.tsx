@@ -3,6 +3,7 @@ import { PrismicRichText } from '@/components/typography/PrismicRichText'
 import { cn } from '@/lib/utils'
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
+import { JSX } from 'react'
 
 /**
  * Props for `RichText`.

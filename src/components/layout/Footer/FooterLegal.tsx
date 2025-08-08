@@ -16,7 +16,7 @@ const FooterLegal = async (props: LayoutDocumentData) => {
       </div>
       <div className="py-3 text-center text-xs lg:text-sm">
         {props.copyright_text}{' '}
-        <FaCopyright className="-mt-1 inline h-3 w-3 text-background" />{' '}
+        <FaCopyright className="text-background -mt-1 inline h-3 w-3" />{' '}
         <Copyright /> {settings.data.site_title}
       </div>
     </div>

@@ -1,31 +1,31 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Listen"
-						}
-					}
-				]
-			},
-			"details": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Cillum nostrud duis anim consequat veniam reprehenderit qui irure nostrud nisi ad ut dolor cillum. Et sunt reprehenderit culpa incididunt aliqua sunt."
-						}
-					}
-				]
-			}
-		},
-		"items": []
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading2",
+            "content": {
+              "text": "Listen"
+            }
+          }
+        ]
+      },
+      "details": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Cillum nostrud duis anim consequat veniam reprehenderit qui irure nostrud nisi ad ut dolor cillum. Et sunt reprehenderit culpa incididunt aliqua sunt."
+            }
+          }
+        ]
+      }
+    },
+    "items": []
+  }
 ]

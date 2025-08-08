@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { Content, isFilled } from '@prismicio/client'
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 import { SliceComponentProps } from '@prismicio/react'
+import { JSX } from 'react'
 
 /**
  * Props for `ImageWithText`.
@@ -35,7 +36,7 @@ const ImageWithText = ({ slice }: ImageWithTextProps): JSX.Element => {
         >
           <PrismicNextImage
             field={slice.primary.image}
-            className="rounded-lg shadow"
+            className="rounded-lg shadow-sm"
             quality={85}
           />
         </div>

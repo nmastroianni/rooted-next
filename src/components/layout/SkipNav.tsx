@@ -10,7 +10,7 @@ const SkipNav = () => {
       variant={'secondary'}
       ref={ref}
       asChild
-      className="fixed -left-36 top-36 z-10 transform transition duration-200 ease-in-out focus:translate-x-44"
+      className="fixed top-36 -left-36 z-10 transform transition duration-200 ease-in-out focus:translate-x-44"
       onClick={() => {
         if (ref.current) {
           ref.current.blur()

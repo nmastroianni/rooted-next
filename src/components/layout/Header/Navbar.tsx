@@ -1,7 +1,7 @@
 'use client'
 import { cn } from '@/lib/utils'
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { motion, useMotionValueEvent, useScroll } from 'motion/react'
+import { JSX, useRef, useState } from 'react'
 import {
   SettingsDocumentData,
   LayoutDocumentData,
@@ -21,7 +21,7 @@ const Navbar = ({ data, settings }: NavbarProps): JSX.Element => {
   const container = useRef(null)
   const [hidden, setHidden] = useState(false)
   const { scrollY } = useScroll()
-  useMotionValueEvent(scrollY, 'change', (latest) => {
+  useMotionValueEvent(scrollY, 'change', latest => {
     const previous: number = scrollY.getPrevious() || 0
     if (latest > previous && latest > 150) {
       setHidden(true)
@@ -39,7 +39,7 @@ const Navbar = ({ data, settings }: NavbarProps): JSX.Element => {
       animate={hidden ? 'hidden' : 'visible'}
       transition={{ duration: 0.4, ease: 'easeInOut' }}
       className={cn(
-        'sticky top-0 z-20 w-full bg-primary transition duration-300 ease-in-out'
+        'bg-primary sticky top-0 z-20 w-full transition duration-300 ease-in-out',
       )}
     >
       <Section width="xl">

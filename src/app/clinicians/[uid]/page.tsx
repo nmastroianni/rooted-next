@@ -23,10 +23,12 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { Graph, Offer, Thing } from 'schema-dts'
+import { ReactNode } from 'react'
 
 type Params = { uid: string }
 
-export default async function Page({ params }: { params: Params }) {
+export default async function Page(props: { params: Promise<Params> }) {
+  const params = await props.params
   const client = createClient()
   const page = await client
     .getByUID('clinician', params.uid, { fetchLinks: ['service.title'] })
@@ -108,11 +110,11 @@ export default async function Page({ params }: { params: Params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Section width="xl" className="bg-secondary">
+      <Section width="xl" className="bg-secondary" as="div">
         <PrismicRichText
           field={page.data.full_name}
           components={{
-            heading1: ({ children }) => (
+            heading1: ({ children }: { children: ReactNode }) => (
               <Heading as="h1" size="5xl" className="my-8 lg:text-center">
                 {children}
               </Heading>
@@ -143,8 +145,8 @@ export default async function Page({ params }: { params: Params }) {
           </div>
         </div>
         <Section as="div" width="xl">
-          <div className="mx-auto max-w-screen-lg rounded-lg bg-background p-4 pt-8">
-            <div className="prose mx-auto mt-6 grid place-content-center gap-4 lg:prose-lg xl:prose-xl prose-ul:pl-0 prose-li:my-0 lg:mt-8 lg:grid-cols-5 lg:gap-8">
+          <div className="bg-background mx-auto max-w-(--breakpoint-lg) rounded-lg p-4 pt-8">
+            <div className="prose lg:prose-lg xl:prose-xl prose-ul:pl-0 prose-li:my-0 mx-auto mt-6 grid place-content-center gap-4 lg:mt-8 lg:grid-cols-5 lg:gap-8">
               <Heading as="h2" size="3xl" className="mb-0 lg:col-span-2">
                 {page.data.first_name} focuses on:
               </Heading>
@@ -162,12 +164,12 @@ export default async function Page({ params }: { params: Params }) {
                 </ul>
               )}
             </div>
-            <div className="prose mx-auto mt-6 grid place-content-center justify-center gap-4 pb-4 lg:prose-lg xl:prose-xl prose-ul:pl-0 prose-li:my-0 lg:mt-8 lg:grid-cols-5 lg:gap-8 lg:pb-8">
+            <div className="prose lg:prose-lg xl:prose-xl prose-ul:pl-0 prose-li:my-0 mx-auto mt-6 grid place-content-center justify-center gap-4 pb-4 lg:mt-8 lg:grid-cols-5 lg:gap-8 lg:pb-8">
               <Heading as="h2" size="3xl" className="mb-0 flex-1 lg:col-span-2">
                 Approaches:
               </Heading>
               {isFilled.group(page.data.approaches) && (
-                <ul className="flex flex-grow list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
+                <ul className="flex grow list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
                   {page.data.approaches.map((approach, i) => {
                     return (
                       <li
@@ -184,12 +186,12 @@ export default async function Page({ params }: { params: Params }) {
                 </ul>
               )}
             </div>
-            <div className="prose mx-auto mt-6 grid place-content-center justify-center gap-4 pb-4 lg:prose-lg xl:prose-xl prose-ul:pl-0 prose-li:my-0 lg:mt-8 lg:grid-cols-5 lg:gap-8 lg:pb-8">
+            <div className="prose lg:prose-lg xl:prose-xl prose-ul:pl-0 prose-li:my-0 mx-auto mt-6 grid place-content-center justify-center gap-4 pb-4 lg:mt-8 lg:grid-cols-5 lg:gap-8 lg:pb-8">
               <Heading as="h2" size="3xl" className="mb-0 flex-1 lg:col-span-2">
                 Delivery:
               </Heading>
               {isFilled.select(page.data.service_delivery) && (
-                <ul className="flex flex-grow list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
+                <ul className="flex grow list-none flex-wrap gap-2 lg:col-span-3 lg:gap-4">
                   <li>
                     <TooltipProvider>
                       <Tooltip>
@@ -211,33 +213,33 @@ export default async function Page({ params }: { params: Params }) {
                 </ul>
               )}
             </div>
-            <div className="mb-12 mt-4 flex justify-center lg:mb-12">
+            <div className="mt-4 mb-12 flex justify-center lg:mb-12">
               <PrismicNextLink
                 field={page.data.psychtoday}
                 className={cn(
                   buttonVariants({ variant: 'default' }),
-                  'bg-[#477be4] text-background',
+                  'text-background bg-[#477be4]',
                 )}
               >
                 View on Psychology Today
               </PrismicNextLink>
             </div>
             <hr />
-            <div className="prose mx-auto my-3 lg:prose-lg xl:prose-xl lg:my-6">
+            <div className="prose lg:prose-lg xl:prose-xl mx-auto my-3 lg:my-6">
               <Heading as="h2" size="4xl">
                 About {page.data.first_name}
               </Heading>
             </div>
             <PrismicRichText field={page.data.about} />
-            <div className="prose mx-auto my-3 lg:prose-lg xl:prose-xl lg:my-6">
+            <div className="prose lg:prose-lg xl:prose-xl mx-auto my-3 lg:my-6">
               <Heading as="h3" size="3xl">
                 {page.data.first_name} specializes in treating:
               </Heading>
             </div>
             <PrismicRichText field={page.data.specialties} />
             {isFilled.group(page.data.services) && (
-              <div className="prose mx-auto lg:prose-lg xl:prose-xl prose-a:no-underline prose-ul:pl-0">
-                <div className="prose mx-auto my-3 lg:prose-lg xl:prose-xl lg:my-6">
+              <div className="prose lg:prose-lg xl:prose-xl prose-a:no-underline prose-ul:pl-0 mx-auto">
+                <div className="prose lg:prose-lg xl:prose-xl mx-auto my-3 lg:my-6">
                   <Heading as="h3" size="3xl">
                     Services {page.data.first_name} renders:
                   </Heading>
@@ -268,11 +270,10 @@ export default async function Page({ params }: { params: Params }) {
   )
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params
+export async function generateMetadata(props: {
+  params: Promise<Params>
 }): Promise<Metadata> {
+  const params = await props.params
   const client = createClient()
   const page = await client
     .getByUID('clinician', params.uid)

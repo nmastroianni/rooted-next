@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { Content, isFilled } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
 import { SliceComponentProps } from '@prismicio/react'
+import { JSX } from 'react'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { FaCalendarCheck, FaComment, FaWpforms } from 'react-icons/fa6'
 
@@ -32,7 +33,7 @@ const Process = ({ slice }: ProcessProps): JSX.Element => {
       width="xl"
       className={cn('py-8 lg:pb-24', {})}
     >
-      <div className="mx-auto my-8 flex max-w-screen-2xl flex-col items-center justify-center">
+      <div className="mx-auto my-8 flex max-w-(--breakpoint-2xl) flex-col items-center justify-center">
         {isFilled.keyText(slice.primary.title) && (
           <p className="text-sm font-medium uppercase">{slice.primary.title}</p>
         )}
@@ -58,7 +59,7 @@ const Process = ({ slice }: ProcessProps): JSX.Element => {
               field={slice.primary.description}
               components={{
                 paragraph: ({ children }) => (
-                  <p className="prose mb-8 lg:prose-lg">{children}</p>
+                  <p className="prose lg:prose-lg mb-8">{children}</p>
                 ),
               }}
             />
@@ -79,9 +80,9 @@ const Process = ({ slice }: ProcessProps): JSX.Element => {
                   >
                     <CardHeader className="min-h-36">
                       {Icon ? (
-                        <Icon className="inline-flex h-24 w-24 self-center text-primary" />
+                        <Icon className="text-primary inline-flex h-24 w-24 self-center" />
                       ) : (
-                        <p className="text-center text-[6rem] font-black text-primary">
+                        <p className="text-primary text-center text-[6rem] font-black">
                           {index + 1}
                         </p>
                       )}
@@ -95,7 +96,7 @@ const Process = ({ slice }: ProcessProps): JSX.Element => {
                           field={item.description}
                           components={{
                             paragraph: ({ children }) => (
-                              <p className="prose mb-8 dark:prose-invert">
+                              <p className="prose dark:prose-invert mb-8">
                                 {children}
                               </p>
                             ),

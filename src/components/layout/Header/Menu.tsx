@@ -17,6 +17,7 @@ import {
   SubMenuDocument,
 } from '../../../../prismicio-types'
 import { buttonVariants } from '@/components/ui/button'
+import { JSX } from 'react'
 
 type MenuProps = {
   data: LayoutDocumentData
@@ -26,10 +27,10 @@ type MenuProps = {
 const Menu = ({ data, className }: MenuProps): JSX.Element => {
   const { slices } = data
   return (
-    <div className={cn('flex flex-grow text-primary-foreground', className)}>
+    <div className={cn('text-primary-foreground flex grow', className)}>
       <NavigationMenu className="max-w-full">
         <NavigationMenuList>
-          {slices.map((slice) => {
+          {slices.map(slice => {
             if (slice.variation === 'withSubMenu') {
               const slicePrimary =
                 slice.primary as MenuItemSliceWithSubMenuPrimary

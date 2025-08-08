@@ -7,6 +7,7 @@ import {
 } from '../../../prismicio-types'
 import { components } from '@/slices'
 import { cn } from '@/lib/utils'
+import { JSX } from 'react'
 
 /**
  * Props for `FooterElement`.

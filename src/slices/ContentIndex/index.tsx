@@ -2,7 +2,7 @@ import ContentList from '@/components/ContentList'
 import Section from '@/components/layout/Section'
 import { Content, isFilled } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
-import { Suspense } from 'react'
+import { JSX, Suspense } from 'react'
 import { FaSpinner } from 'react-icons/fa6'
 
 /**

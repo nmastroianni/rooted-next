@@ -1,43 +1,43 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"rich_text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Velit pariatur non anim consequat. Sit qui aliqua et duis do sint."
-						}
-					}
-				]
-			}
-		},
-		"items": []
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "secondary",
-		"primary": {
-			"rich_text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Labore voluptate in quis reprehenderit ut mollit reprehenderit incididunt deserunt adipisicing irure cupidatat nulla velit eiusmod. Irure qui eiusmod excepteur quis labore anim. Enim nostrud sit id consectetur ut reprehenderit et reprehenderit excepteur."
-						}
-					}
-				]
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "rich_text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Velit pariatur non anim consequat. Sit qui aliqua et duis do sint."
+            }
+          }
+        ]
+      }
+    },
+    "items": []
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "secondary",
+    "primary": {
+      "rich_text": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Labore voluptate in quis reprehenderit ut mollit reprehenderit incididunt deserunt adipisicing irure cupidatat nulla velit eiusmod. Irure qui eiusmod excepteur quis labore anim. Enim nostrud sit id consectetur ut reprehenderit et reprehenderit excepteur."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
 ]

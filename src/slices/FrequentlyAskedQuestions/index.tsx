@@ -10,6 +10,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { PrismicRichText } from '@/components/typography/PrismicRichText'
+import { JSX } from 'react'
 
 /**
  * Props for `FrequentlyAskedQuestions`.
@@ -49,7 +50,7 @@ const FrequentlyAskedQuestions = ({
       {isFilled.group(slice.primary.questions) && (
         <Accordion
           type="multiple"
-          className="my-6 rounded-lg bg-secondary px-4 lg:my-12"
+          className="bg-secondary my-6 rounded-lg px-4 lg:my-12"
         >
           {slice.primary.questions.map((item, index) => (
             <AccordionItem
@@ -63,7 +64,7 @@ const FrequentlyAskedQuestions = ({
                     field={item.question}
                     components={{
                       paragraph: ({ children }) => (
-                        <p className="prose pr-4 text-left font-semibold dark:prose-invert lg:prose-lg xl:prose-xl">
+                        <p className="prose dark:prose-invert lg:prose-lg xl:prose-xl pr-4 text-left font-semibold">
                           {children}
                         </p>
                       ),
@@ -79,7 +80,7 @@ const FrequentlyAskedQuestions = ({
                     field={item.answer}
                     components={{
                       paragraph: ({ children }) => (
-                        <p className="prose my-1.5 dark:prose-invert lg:prose-lg lg:my-3">
+                        <p className="prose dark:prose-invert lg:prose-lg my-1.5 lg:my-3">
                           {children}
                         </p>
                       ),

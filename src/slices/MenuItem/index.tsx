@@ -1,10 +1,11 @@
-import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { Content } from '@prismicio/client'
+import { SliceComponentProps } from '@prismicio/react'
+import { JSX } from 'react'
 
 /**
  * Props for `MenuItem`.
  */
-export type MenuItemProps = SliceComponentProps<Content.MenuItemSlice>;
+export type MenuItemProps = SliceComponentProps<Content.MenuItemSlice>
 
 /**
  * Component for "MenuItem" Slices.
@@ -17,7 +18,7 @@ const MenuItem = ({ slice }: MenuItemProps): JSX.Element => {
     >
       Placeholder component for menu_item (variation: {slice.variation}) Slices
     </section>
-  );
-};
+  )
+}
 
-export default MenuItem;
+export default MenuItem

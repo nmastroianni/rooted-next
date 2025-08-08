@@ -1,12 +1,12 @@
 import {
   PrismicRichText as BasePrismicRichText,
   JSXMapSerializer,
-  PrismicRichTextProps,
+  PrismicRichTextProps as BasePrismicRichTextProps,
 } from '@prismicio/react'
 import * as prismic from '@prismicio/client'
 import Heading from '@/components/typography/Heading'
 import Image from 'next/image'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import { PrismicNextLink } from '@prismicio/next'
 import { cn } from '@/lib/utils'
@@ -22,42 +22,42 @@ type RichTextSpanProps = {
 }
 
 const defaultComponents: JSXMapSerializer = {
-  heading1: ({ children }) => {
+  heading1: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h1" size="6xl">
         {children}
       </Heading>
     )
   },
-  heading2: ({ children }) => {
+  heading2: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h2" size="5xl">
         {children}
       </Heading>
     )
   },
-  heading3: ({ children }) => {
+  heading3: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h3" size="4xl">
         {children}
       </Heading>
     )
   },
-  heading4: ({ children }) => {
+  heading4: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h4" size="3xl">
         {children}
       </Heading>
     )
   },
-  heading5: ({ children }) => {
+  heading5: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h5" size="2xl">
         {children}
       </Heading>
     )
   },
-  heading6: ({ children }) => {
+  heading6: ({ children }: { children: ReactNode }) => {
     return (
       <Heading as="h6" size="xl">
         {children}
@@ -71,7 +71,7 @@ const defaultComponents: JSXMapSerializer = {
     return (
       <p
         className={cn(
-          'prose mx-auto my-3 text-foreground lg:prose-lg xl:prose-xl lg:my-6',
+          'prose text-foreground lg:prose-lg xl:prose-xl mx-auto my-3 lg:my-6',
           {
             grid: labels.length > 0 && labels[0].data.label === 'button',
           },
@@ -83,7 +83,7 @@ const defaultComponents: JSXMapSerializer = {
   },
   embed: ({ node }) => {
     return (
-      <div className="mx-auto max-w-screen-sm overflow-hidden rounded shadow-xl">
+      <div className="mx-auto max-w-(--breakpoint-sm) overflow-hidden rounded shadow-xl">
         <div
           className="aspect-h-9 aspect-w-16"
           dangerouslySetInnerHTML={{ __html: node.oembed.html || '' }}
@@ -107,7 +107,7 @@ const defaultComponents: JSXMapSerializer = {
   },
   list: ({ children }) => {
     return (
-      <ul className="prose mx-auto list-disc lg:prose-lg xl:prose-xl">
+      <ul className="prose lg:prose-lg xl:prose-xl mx-auto list-disc">
         {children}
       </ul>
     )
@@ -115,21 +115,30 @@ const defaultComponents: JSXMapSerializer = {
   listItem: ({ children }) => {
     return <li className="ml-4 md:ml-6 lg:ml-8 xl:ml-10">{children}</li>
   },
-  hyperlink: ({ node, children }) => {
-    return (
-      <PrismicNextLink
-        field={node.data}
-        className={cn(
-          {
-            'no-underline': children[0].props.className === 'button',
-          },
-          children[0].props.className === 'button' && buttonVariants(),
-        )}
-      >
-        {children}
-      </PrismicNextLink>
-    )
-  },
+  // hyperlink: ({ node, children }) => {
+  //   return (
+  //     <PrismicNextLink
+  //       field={node.data}
+  //       className={cn(
+  //         {
+  //           'no-underline': children[0]?.props.className === 'button',
+  //         },
+  //         children[0].props.className === 'button' && buttonVariants(),
+  //       )}
+  //     >
+  //       {children}
+  //     </PrismicNextLink>
+  //   )
+  // },
+}
+
+// Define PrismicRichTextProps as a generic type
+interface PrismicRichTextProps<
+  LinkResolverFunction extends
+    prismic.LinkResolverFunction = prismic.LinkResolverFunction,
+> extends BasePrismicRichTextProps {
+  components?: Record<string, React.ComponentType<any>>
+  // Add other props as needed
 }
 
 export const PrismicRichText = function PrismicRichText<

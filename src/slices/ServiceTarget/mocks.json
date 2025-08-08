@@ -1,276 +1,276 @@
 [
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"targets": {
-				"__TYPE__": "GroupContentType",
-				"value": [
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"target_title",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "heading2",
-											"content": {
-												"text": "Men's Issues",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							],
-							[
-								"target_description",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "While, historically, men have been less likely to seek therapy, this has changed over the past decade as the stigma on therapy overall has decreased and the unique problems men face are being increasing openly discussed. Even though those of all gender-identities experience many of the same concerns and many of these issues do not affect only men, we find that men often seek therapy for concerns including:",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							],
-							[
-								"target_image",
-								{
-									"url": "https://images.unsplash.com/photo-1511468207104-3be8c87c88f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxtYW4lMjBiZWFjaHxlbnwwfHx8fDE3MjAwOTY0MjV8MA&ixlib=rb-4.0.3&q=85",
-									"alt": "man sitting on beach sand",
-									"origin": {
-										"id": "MQrj2QeHYAg",
-										"url": "https://images.unsplash.com/photo-1511468207104-3be8c87c88f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxtYW4lMjBiZWFjaHxlbnwwfHx8fDE3MjAwOTY0MjV8MA&ixlib=rb-4.0.3&q=85",
-										"width": 5445,
-										"height": 2978
-									},
-									"width": 5445,
-									"height": 2978,
-									"edit": {
-										"background": "transparent",
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										}
-									},
-									"credits": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							],
-							[
-								"issue_list",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Parenting",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Mental Load",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Moving",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Marriage",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Divorce/Remarriage",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Job or Careers Changes",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							]
-						]
-					},
-					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"target_title",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "heading2",
-											"content": {
-												"text": "Women's Issues",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							],
-							[
-								"target_description",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Women seek therapy for a variety of reason, many of which are not gender-specific. However, there are also issues which are unique to women and they often require a therapist to have a specialized skill set and targeted therapeutic techniques. These concerns may include:",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							],
-							[
-								"target_image",
-								{
-									"url": "https://images.unsplash.com/photo-1437912958086-300d70657a11?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxtb20lMjBzaXR0aW5nfGVufDB8fHx8MTcyMDA5NzkwNXww&ixlib=rb-4.0.3&q=85",
-									"alt": "woman in white dress shirt holding her daughter in tutu dress beside of asphalt road during daytime",
-									"origin": {
-										"id": "mE9DC6I1_8I",
-										"url": "https://images.unsplash.com/photo-1437912958086-300d70657a11?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxtb20lMjBzaXR0aW5nfGVufDB8fHx8MTcyMDA5NzkwNXww&ixlib=rb-4.0.3&q=85",
-										"width": 5616,
-										"height": 3744
-									},
-									"width": 5616,
-									"height": 3744,
-									"edit": {
-										"background": "transparent",
-										"zoom": 1,
-										"crop": {
-											"x": 0,
-											"y": 0
-										}
-									},
-									"credits": null,
-									"__TYPE__": "ImageContent",
-									"thumbnails": {}
-								}
-							],
-							[
-								"issue_list",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Parenting",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Balancing multiple roles (wife, partner, daughter, mother, employee, business owner, etc.)",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Mental load",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Pregnancy and/or infertility",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Post-partum mental health concerns",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Traumatic births",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Childhood trauma",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Relationship issues",
-												"spans": []
-											},
-											"direction": "ltr"
-										},
-										{
-											"type": "list-item",
-											"content": {
-												"text": "Self-esteem",
-												"spans": []
-											},
-											"direction": "ltr"
-										}
-									]
-								}
-							]
-						]
-					}
-				]
-			}
-		},
-		"items": []
-	}
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "targets": {
+        "__TYPE__": "GroupContentType",
+        "value": [
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "target_title",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "heading2",
+                      "content": {
+                        "text": "Men's Issues",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "target_description",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "paragraph",
+                      "content": {
+                        "text": "While, historically, men have been less likely to seek therapy, this has changed over the past decade as the stigma on therapy overall has decreased and the unique problems men face are being increasing openly discussed. Even though those of all gender-identities experience many of the same concerns and many of these issues do not affect only men, we find that men often seek therapy for concerns including:",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "target_image",
+                {
+                  "url": "https://images.unsplash.com/photo-1511468207104-3be8c87c88f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxtYW4lMjBiZWFjaHxlbnwwfHx8fDE3MjAwOTY0MjV8MA&ixlib=rb-4.0.3&q=85",
+                  "alt": "man sitting on beach sand",
+                  "origin": {
+                    "id": "MQrj2QeHYAg",
+                    "url": "https://images.unsplash.com/photo-1511468207104-3be8c87c88f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHxtYW4lMjBiZWFjaHxlbnwwfHx8fDE3MjAwOTY0MjV8MA&ixlib=rb-4.0.3&q=85",
+                    "width": 5445,
+                    "height": 2978
+                  },
+                  "width": 5445,
+                  "height": 2978,
+                  "edit": {
+                    "background": "transparent",
+                    "zoom": 1,
+                    "crop": {
+                      "x": 0,
+                      "y": 0
+                    }
+                  },
+                  "credits": null,
+                  "__TYPE__": "ImageContent",
+                  "thumbnails": {}
+                }
+              ],
+              [
+                "issue_list",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Parenting",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Mental Load",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Moving",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Marriage",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Divorce/Remarriage",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Job or Careers Changes",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "__TYPE__": "GroupItemContent",
+            "value": [
+              [
+                "target_title",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "heading2",
+                      "content": {
+                        "text": "Women's Issues",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "target_description",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "paragraph",
+                      "content": {
+                        "text": "Women seek therapy for a variety of reason, many of which are not gender-specific. However, there are also issues which are unique to women and they often require a therapist to have a specialized skill set and targeted therapeutic techniques. These concerns may include:",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ],
+              [
+                "target_image",
+                {
+                  "url": "https://images.unsplash.com/photo-1437912958086-300d70657a11?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxtb20lMjBzaXR0aW5nfGVufDB8fHx8MTcyMDA5NzkwNXww&ixlib=rb-4.0.3&q=85",
+                  "alt": "woman in white dress shirt holding her daughter in tutu dress beside of asphalt road during daytime",
+                  "origin": {
+                    "id": "mE9DC6I1_8I",
+                    "url": "https://images.unsplash.com/photo-1437912958086-300d70657a11?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw0fHxtb20lMjBzaXR0aW5nfGVufDB8fHx8MTcyMDA5NzkwNXww&ixlib=rb-4.0.3&q=85",
+                    "width": 5616,
+                    "height": 3744
+                  },
+                  "width": 5616,
+                  "height": 3744,
+                  "edit": {
+                    "background": "transparent",
+                    "zoom": 1,
+                    "crop": {
+                      "x": 0,
+                      "y": 0
+                    }
+                  },
+                  "credits": null,
+                  "__TYPE__": "ImageContent",
+                  "thumbnails": {}
+                }
+              ],
+              [
+                "issue_list",
+                {
+                  "__TYPE__": "StructuredTextContent",
+                  "value": [
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Parenting",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Balancing multiple roles (wife, partner, daughter, mother, employee, business owner, etc.)",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Mental load",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Pregnancy and/or infertility",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Post-partum mental health concerns",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Traumatic births",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Childhood trauma",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Relationship issues",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    },
+                    {
+                      "type": "list-item",
+                      "content": {
+                        "text": "Self-esteem",
+                        "spans": []
+                      },
+                      "direction": "ltr"
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "items": []
+  }
 ]
