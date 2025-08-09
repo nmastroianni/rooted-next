@@ -7,10 +7,8 @@ import * as prismic from '@prismicio/client'
 import Heading from '@/components/typography/Heading'
 import Image from 'next/image'
 import React, { ReactNode } from 'react'
-import Link from 'next/link'
 import { PrismicNextLink } from '@prismicio/next'
 import { cn } from '@/lib/utils'
-import { buttonVariants } from '../ui/button'
 
 type RichTextSpanProps = {
   start: number
@@ -115,21 +113,13 @@ const defaultComponents: JSXMapSerializer = {
   listItem: ({ children }) => {
     return <li className="ml-4 md:ml-6 lg:ml-8 xl:ml-10">{children}</li>
   },
-  // hyperlink: ({ node, children }) => {
-  //   return (
-  //     <PrismicNextLink
-  //       field={node.data}
-  //       className={cn(
-  //         {
-  //           'no-underline': children[0]?.props.className === 'button',
-  //         },
-  //         children[0].props.className === 'button' && buttonVariants(),
-  //       )}
-  //     >
-  //       {children}
-  //     </PrismicNextLink>
-  //   )
-  // },
+  hyperlink: ({ node, children }) => {
+    return (
+      <PrismicNextLink field={node.data} className="underline">
+        {children}
+      </PrismicNextLink>
+    )
+  },
 }
 
 // Define PrismicRichTextProps as a generic type
