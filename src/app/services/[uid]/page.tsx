@@ -6,7 +6,7 @@ import { createClient } from '@/prismicio'
 import { components } from '@/slices'
 import Section from '@/components/layout/Section'
 import Heading from '@/components/typography/Heading'
-import { asText } from '@prismicio/client'
+import { asText, isFilled } from '@prismicio/client'
 import PageBreadcrumbs from '@/components/layout/PageBreadcrumbs'
 import {
   getUrlSegments,
@@ -76,7 +76,9 @@ export default async function Page(props: { params: Promise<Params> }) {
             ),
           }}
         />
-        <PrismicRichText field={page.data.description} />
+        {isFilled.richText(page.data.description) && (
+          <PrismicRichText field={page.data.description} />
+        )}
         <PageBreadcrumbs segments={urlSegments} title={page.data.title} />
         <hr />
       </Section>
